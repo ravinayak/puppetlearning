@@ -1,0 +1,1 @@
+This is a sample motd file which will be copied to /etc folder as motd
