@@ -1,3 +1,6 @@
+use {'ninja':
+	ensure => present,
+}
 file { "/etc/ninja":
 	owner => 'ninja',
 	ensure => true,
