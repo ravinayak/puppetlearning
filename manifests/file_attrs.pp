@@ -19,5 +19,5 @@ file { '/etc/symbolic_link':
 
 file {'/etc/tree_sample_dir':
 	source => '/examples/sample_dir',
-	recure => true,
+	recurse => true,
 }
