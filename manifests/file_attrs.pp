@@ -3,7 +3,7 @@ user {'ninja':
 }
 file { "/etc/ninja":
 	owner => 'ninja',
-	ensure => true,
+	ensure => file,
 	group => 'ninja',
 	mode => '0644',
 }
