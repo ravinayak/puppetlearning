@@ -1,4 +1,4 @@
-use {'ninja':
+user {'ninja':
 	ensure => present,
 }
 file { "/etc/ninja":
