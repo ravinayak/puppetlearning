@@ -12,3 +12,12 @@ exec {'random-command':
 	command => '/usr/bin/bash file_creation.sh',
 	onlyif => '/tmp/file_creation/abc.txt',
 }
+
+file {'/tmp/notify-file.txt': 
+	content => 'Hi there',
+	notify => Exec['next-command'],
+}
+exec {'next-command': 
+	cwd => '/tmp',
+	command => '/bin/date +%F > /tmp/new-date.txt',
+}
