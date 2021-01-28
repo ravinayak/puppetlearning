@@ -6,3 +6,8 @@ cron{ 'cron example':
 	minute => '*/15',
 	weekday => ['Thursday'], 
 }
+cron { 'run daily backup':
+	command => '/usr/local/bin/backup',
+	minute => '0',
+	hour => fqdn_rand(24, 'run daily backup'),
+}
