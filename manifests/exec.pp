@@ -20,4 +20,5 @@ file {'/tmp/notify-file.txt':
 exec {'next-command': 
 	cwd => '/tmp',
 	command => '/bin/date +%F > /tmp/new-date.txt',
+	refreshonly => true,
 }
