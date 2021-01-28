@@ -9,6 +9,6 @@ file { '/tmp/file_creation/file_creation.sh':
 exec {'random-command':
 	cwd => '/tmp/file_creation',
 	path => '/tmp/file_creation'
-	command => './file_creation.sh',
+	command => '/usr/bin/bash file_creation.sh',
 	creates => '/tmp/file_creation/abc.txt',
 }
