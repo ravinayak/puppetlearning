@@ -1,18 +1,11 @@
-package { 'ntp':
-	ensure => installed,
-}
 
-package { 'r10k':
-	ensure => installed,
-	provider => puppet_gem,
-}
-
-file {'/etc/motd.txt':
+file {'/etc/motd1.txt':
 	ensure => present,
 	content => 'Hi there',
 	notify => Service['ntp'],
 }
 service { 'ntp':
+	user => root,
 	enable      => true,
 	ensure      => running,
 	hasstatus => false,
