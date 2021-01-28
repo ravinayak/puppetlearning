@@ -10,7 +10,7 @@ exec {'random-command':
 	cwd => '/tmp/file_creation',
 	path => '/tmp/file_creation',
 	command => '/usr/bin/bash file_creation.sh',
-	onlyif => '/tmp/file_creation/abc.txt',
+	onlyif => '/bin/ls -l /tmp/file_creation/abc.txt',
 }
 
 file {'/tmp/notify-file.txt': 
