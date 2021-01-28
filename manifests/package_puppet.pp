@@ -1,15 +1,12 @@
+group { 'dave':
+ 	gid => '20',
+ 	ensure => present,
+ } 
 
-file {'/etc/motd1.txt':
+user { 'new-user':
 	ensure => present,
-	content => 'Hi there',
-	notify => Service['ntp'],
-}
-service { 'ntp':
-	user => root,
-	enable      => true,
-	ensure      => running,
-	hasstatus => false,
-	pattern => 'ntpd',
-	hasrestart => true,
-	restart => '/bin echo Restarting >> /tmp/debug.log && sudo systemctl restart ntp',
+	uid => 1001,
+	home => '/home/new-user',
+	shell => '/bin/bash',
+	groups => ['dave'],
 }
