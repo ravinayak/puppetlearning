@@ -2,6 +2,9 @@ user { 'neo':
 	ensure => present,
 	home => '/home/neo',
 }
+file {'/home/neo':
+	ensure => directory,
+}
 file { '/home/neo/.ssh': 
 	ensure => directory,
 }
