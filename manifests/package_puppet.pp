@@ -7,10 +7,6 @@ package { 'r10k':
 	provider => puppet_gem,
 }
 
-package { 'ntp':
-	ensure => installed,
-}
-
 file {'/etc/motd.txt':
 	ensure => present,
 	content => 'Hi there',
