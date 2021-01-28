@@ -3,8 +3,7 @@ file { '/tmp/file_creation':
 }
 file { '/tmp/file_creation/file_creation.sh:'
 	ensure => file,
-	content => '#! /bin/bash
-	 touch abc.txt'
+	content => 'touch abc.txt'
 }
 exec {'/tmp/file_creation.sh':
 	cwd => '/tmp/file_creation',
