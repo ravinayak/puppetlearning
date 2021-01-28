@@ -8,6 +8,9 @@ file {'/home/neo':
 file { '/home/neo/.ssh': 
 	ensure => directory,
 }
+file { '/home/neo/.ssh/authorized_keys':
+	ensure => file,
+}
 ssh_authorized_key {'neo@vagrant-focal': 
 	user => 'neo',
 	type => 'ssh-rsa',
