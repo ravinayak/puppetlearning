@@ -1,16 +1,17 @@
 user { 'neo':
 	ensure => present,
 	home => '/home/neo',
+	purge_ssh_keys => true,
 }
 file {'/home/neo':
 	ensure => directory,
+	owner => neo,
+	group => neo
 }
-file { '/home/neo/.ssh': 
+file { '/home/neo/.ssh':
 	ensure => directory,
-}
-file { '/home/neo/.ssh/authorized_keys':
-	ensure => file,
-	mode => '0600',
+	owner => neo,
+	group => neo
 }
 ssh_authorized_key {'neo@vagrant-focal': 
 	user => 'neo',
