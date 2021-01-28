@@ -2,7 +2,7 @@ user { 'neo':
 	ensure => present,
 	home => '/home/neo',
 }
-file { '/home/.ssh': 
+file { '/home/neo/.ssh': 
 	ensure => directory,
 }
 ssh_authorized_key {'neo@vagrant-focal': 
