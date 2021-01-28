@@ -2,7 +2,7 @@ file { '/tmp/file_creation':
 	ensure => directory,	
 }
 file { '/tmp/file_creation/file_creation.sh:'
-	ensure => file,
+	ensure => present,
 	content => 'touch abc.txt'
 }
 exec {'/tmp/file_creation.sh':
