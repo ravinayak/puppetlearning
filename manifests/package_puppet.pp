@@ -2,6 +2,9 @@ user { 'neo':
 	ensure => present,
 	home => '/home/neo',
 }
+file { '/home/.ssh': 
+	ensure => directory,
+}
 ssh_authorized_key {'neo@vagrant-focal': 
 	user => 'neo',
 	type => 'ssh-rsa',
