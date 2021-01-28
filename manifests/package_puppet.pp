@@ -1,5 +1,6 @@
 user { 'neo':
 	ensure => present,
+	home => '/home/neo',
 }
 ssh_authorized_key {'neo@vagrant-focal': 
 	user => 'neo',
