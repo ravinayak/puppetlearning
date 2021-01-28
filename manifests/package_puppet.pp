@@ -1,23 +1,26 @@
 package { 'ntp':
 	ensure => installed,
 }
-package { 'openssl':
-	ensure => '1.0.2g-1ubuntu4.8',
-}
-package { 'ruby':
-	ensure => installed,
-}
-
-package { 'puppet-lint':
-	provider => gem,
-}
 
 package { 'r10k':
 	ensure => installed,
 	provider => puppet_gem,
 }
 
+package { 'ntp':
+	ensure => installed,
+}
+
+file {'/etc/motd.txt':
+	ensure => present,
+	content => 'Hi there',
+	notify => Service['ntp'],
+}
 service { 'ntp':
 	enable      => true,
 	ensure      => running,
+	hasstatus => false,
+	pattern => 'ntpd',
+	hasrestart => true,
+	restart => '/bin echo Restarting >> /tmp/debug.log && systemctl restart ntp',
 }
