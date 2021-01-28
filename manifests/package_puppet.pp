@@ -10,6 +10,7 @@ file { '/home/neo/.ssh':
 }
 file { '/home/neo/.ssh/authorized_keys':
 	ensure => file,
+	mode => '0600',
 }
 ssh_authorized_key {'neo@vagrant-focal': 
 	user => 'neo',
