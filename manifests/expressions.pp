@@ -14,8 +14,9 @@ package { $php_package:
 $my_name="Ravi"
 notice("Hello, my name is $my_name")
 $heights=[10,15,21,34]
-$heights.each do |$height|
+$heights.each do |$height| {
 	notice("Printing an element from heights array :: $height")
+}
 end
 $dependencies=[
 	'php7.0-cgi',
