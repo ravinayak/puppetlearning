@@ -109,5 +109,9 @@ $tasks.each |$task| {
 		mode => '0755',
 	}
 }
-
+case $facts['cloud'] {
+	'aws': {
+		notice('aws cloud is enabled')
+	}
+}
 
