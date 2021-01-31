@@ -6,10 +6,9 @@ file{'/tmp/track_update_2.txt':
 exec{'apt-get-update':
 	command => '/bin/apt-get update -y',
 	refreshonly => true,
-	notice('Apt get update command is being run'),
 }
-$ruby='ruby'
-package { $ruby:
+$yedda='ruby'
+package { $yedda:
 	ensure => installed,
 }
 $heights=[10,11,12]
@@ -28,8 +27,8 @@ case $webserver {
 		notice(Nothing has been selected)
 	}
 }
-$perl='perl'
-if $perl {
+$perl_2='perl'
+if $perl_2 {
 	notice('Perl has been selected')
 }else {
 	notice('Ruby has been selected')
