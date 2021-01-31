@@ -24,7 +24,7 @@ case $webserver {
 		notice('Apache has been selected')
 	}
 	default: {
-		notice(Nothing has been selected)
+		notice('Nothing has been selected')
 	}
 }
 $perl_2='perl'
