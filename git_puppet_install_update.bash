@@ -14,9 +14,9 @@ apt-get install build-essential -y
 /opt/puppetlabs/puppet/bin/gem install gpgme --no-document
 /opt/puppetlabs/puppet/bin/gem install hiera-eyaml-gpg --no-document
 /opt/puppetlabs/puppet/bin/gem install r10k --no-document
-git clone https://github.com/vim/vim.git
 apt-get install libncurses5-dev libncursesw5-dev
-cd vim/src
-make
+apt-get autoremove -y
+apt-get clean
+rm -rf /var/backups
 touch /var/vagrant_provision
 
