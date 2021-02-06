@@ -9,9 +9,9 @@ if lookup('is_production', Boolean) {
 	notice("Here are the values of monitor_ips :: ${lookup('monitor_ips', Array[String])}")
 }
 $cobbler_config=lookup('cobbler_config', Hash)
-if($cobbler_config.manage_dhcp){
-	notice('$cobbler_config.manage_dhcp is enabled')
+if(lookup('cobbler_config.manage_dhcp'), Boolean){
+	notice("$cobbler_config.manage_dhcp is enabled :: ${cobbler_config['manage_dhcp']}")
 }
-if($cobbler_config.pxe_just_once){
-	notice('$cobbler_config.pxe_just_once is enabled')
+if(lookup('cobbler_config.pxe_just_once'), Boolean){
+	notice("cobbler_config.pxe_just_once is enabled :: ${cobbler_config['pxe_just_once']}")
 }
