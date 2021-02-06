@@ -16,4 +16,4 @@ if(lookup('cobbler_config.pxe_just_once', Boolean)) {
 	notice("cobbler_config.pxe_just_once is enabled :: ${cobbler_config['pxe_just_once']}")
 }
 notice("backup_path: ${lookup('backup_path', String)}")
-notice("new_vpn_allow_list: ${lookup('new_vpn_allow_list')}")
+notice("new_vpn_allow_list: ${lookup('new_vpn_allow_list', Array[String])}")
