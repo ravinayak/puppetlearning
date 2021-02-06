@@ -28,6 +28,6 @@ rm -rf /var/backups
 # sudo ssh -vT git@github.com # this should return a successful message of your authentication
 # sugo git clone <git_clone_url>
 # 
-rm ~/puppet-release-focal.deb
+rm /home/neo/puppet-release-focal.deb
 touch /var/vagrant_provision
 
