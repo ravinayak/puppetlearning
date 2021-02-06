@@ -18,5 +18,16 @@ apt-get install libncurses5-dev libncursesw5-dev -y
 apt-get autoremove -y
 apt-get clean
 rm -rf /var/backups
+# Remember to put the github private key id_ecdsa of your account in root user's ~/.ssh in vagrant box. This is because vagrant box 
+# uses sudo command to perform git operations and the root should be able to authenticate to git as your account
+# cp ~/.ssh/id_ecdsa ~/vgboxes/host_synced_folders/
+# vagrant ssh
+# sudo su # Login as root
+# cp /data_synced_with_host/id_ecdsa ~/.ssh/
+# exit # login as vagrant user
+# sudo ssh -vT git@github.com # this should return a successful message of your authentication
+# sugo git clone <git_clone_url>
+# 
+rm ~/puppet-release-focal.deb
 touch /var/vagrant_provision
 
