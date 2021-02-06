@@ -15,3 +15,4 @@ if(lookup('cobbler_config.manage_dhcp', Boolean)) {
 if(lookup('cobbler_config.pxe_just_once', Boolean)) {
 	notice("cobbler_config.pxe_just_once is enabled :: ${cobbler_config['pxe_just_once']}")
 }
+notice("backup_path: ${lookup('backup_path', String)}")
