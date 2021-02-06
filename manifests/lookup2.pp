@@ -17,3 +17,4 @@ if(lookup('cobbler_config.pxe_just_once', Boolean)) {
 }
 notice("backup_path: ${lookup('backup_path', String)}")
 notice("new_vpn_allow_list: ${lookup('new_vpn_allow_list', Array[String])}")
+notice("${lookup('duplicate_values', Array, unique)}")
