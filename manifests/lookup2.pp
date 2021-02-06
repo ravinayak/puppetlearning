@@ -21,12 +21,10 @@ notice(lookup('duplicate_values', Array, 'unique'))
 
 lookup('users', Array[String]).each |String $user| {
 	notice("The value of user is ${user}")
-	user { $user: 
-		ensure => absent,
+}
+notice("Use of literal in Hiera :: ${lookup('apache_http', String)}")
+lookup('users2', Hash, 'hash').each | String $user, Hash $attributes | {
+	user{ $user: 
+		* => $attributes
 	}
 }
-# lookup('users2', Hash, 'hash').each | String $user, Hash $attributes | {
-# 	user{ $user: 
-# 		* => $attributes
-# 	}
-# }
