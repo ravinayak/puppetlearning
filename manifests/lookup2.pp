@@ -28,3 +28,6 @@ lookup('users2', Hash, 'hash').each | String $user, Hash $attributes | {
 		* => $attributes
 	}
 }
+
+notice('Test Secret is being displayed below')
+notice(lookup('test_secret', String))
