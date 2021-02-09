@@ -1,3 +1,6 @@
+package { 'ruby':
+	ensure => installed,
+}
 package { 'mysql':
 	ensure => present,
 	provider => gem,
