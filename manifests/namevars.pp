@@ -1,13 +1,9 @@
-package { 'ruby-dev':
-	ensure => installed,
-}
 package { 'mysql':
-	ensure => present,
-	provider => gem,
+	ensure => absent,
 	name => 'mysql',
 }
 
 package { 'rpm mysql':
-	ensure => present,
+	ensure => absent,
 	name => 'mysql',
 }
