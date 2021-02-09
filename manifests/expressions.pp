@@ -9,10 +9,6 @@ $php_package='php7.0-cli'
 #}
 $my_name="Ravi"
 notice("Hello, my name is $my_name")
-$heights=[10,15,21,34]
-$heights.each |$height| {
-	notice("Height is $height")
-}
 $dependencies=[
 	'php7.0-cgi',
 	'php7.0-common',
@@ -30,14 +26,14 @@ $heights_hash = {
 	'saun' => 335,
 }
 notice("John's height is ${heights_hash['saun']}")
-$attributes={
+$attributes_1={
 	'owner' => 'ubuntu',
 	mode => '0755',
 	group => 'ubuntu',
 }
 file { '/tmp/text':
 	ensure => present,
-	* => $attributes,
+	* => $attributes_1,
 }
 $value =(25*82)+(12/4)-(3)
 notice("Answer for expression posted above is :: $value")
@@ -72,8 +68,8 @@ if $install_perl {
 		}
 }
 
-$webserver='nginx'
-case $webserver {
+$webserver_1='nginx'
+case $webserver_1 {
 	'nginx': {
 		notice('nginx selected for installation')
 	}
