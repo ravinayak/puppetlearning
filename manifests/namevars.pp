@@ -1,10 +1,10 @@
 package { 'mysql':
-	ensure => absent,
+	ensure => present,
 	provider => gem,
 	name => 'mysql',
 }
 
 package { 'rpm mysql':
-	ensure => absent,
+	ensure => present,
 	name => 'mysql',
 }
