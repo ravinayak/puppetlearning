@@ -1,9 +1,9 @@
 package { 'mysql':
-	ensure => installed,
+	ensure => absent,
 	provider => gem,
 }
 
-package { 'mysql':
-	ensure => installed,
-	name => 'mysql-one',
+package { 'rpm mysql':
+	ensure => absent,
+	provider => gem,
 }
