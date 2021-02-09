@@ -1,4 +1,4 @@
-package { 'ruby':
+package { 'ruby-dev':
 	ensure => installed,
 }
 package { 'mysql':
