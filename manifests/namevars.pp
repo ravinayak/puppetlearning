@@ -1,9 +1,9 @@
-package { 'apache':
+package { 'mysql':
 	ensure => installed,
-	name => 'httpd',
+	provider => gem,
 }
 
-package { 'apache2':
+package { 'mysql':
 	ensure => installed,
-	provider => 'httpd-one'
+	name => 'mysql-one',
 }
