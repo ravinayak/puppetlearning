@@ -3,10 +3,6 @@ file{'/tmp/track_update.txt':
 	content => 'This is a sample txt file',
 	notify => Exec['apt-get-update'],
 }
-exec{ 'apt-get-update': 
-	command => '/usr/bin/apt-get update -y',
-	refreshonly => true,
-}
 $php_package='php7.0-cli'
 #package { $php_package:
 #	ensure => installed,
