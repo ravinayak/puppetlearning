@@ -19,6 +19,7 @@ apt-get autoremove -y
 apt-get clean
 rm -rf /var/backups
 apt-get install vim-gtk -y
+apt-get install net-tools -y
 apt-get install openssh-server -y
 ufw allow ssh
 # Remember to put the github private key id_ecdsa of your account in root user's ~/.ssh in vagrant box. This is because vagrant box 
