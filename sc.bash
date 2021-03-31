@@ -3,10 +3,8 @@
 # a. bash sc.bash <run.pp>
 # b. ./sc.bash <run.pp>
 #!/bin/bash
-changed_file="manifests/$1"
-echo $changed_file
-cp ../examples/"$file" manifests/.
-git add $changed_file
+cp ../examples/"$1" manifests/.
+git add manifests/"$1"
 git commit -m "Checking Changes in"
 git push -u origin master
 
