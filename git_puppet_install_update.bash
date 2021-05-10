@@ -28,9 +28,15 @@ ufw allow ssh
 # vagrant ssh
 # sudo su # Login as root
 # cp /data_synced_with_host/id_ecdsa ~/.ssh/
+# vim ~/.gitconfig # Create a gitconfig with the following details
+# [user]
+#	name = Ravi Kumar Nayak
+#	email = ravinayak19@gmail.com
+#	username = ravinayak
+#
 # exit # login as vagrant user
 # sudo ssh -vT git@github.com # this should return a successful message of your authentication
-# sugo git clone <git_clone_url>
+# sugo git clone <git_clone_url=git@github.com:ravinayak/puppet-learning.git>
 # 
 rm /home/vagrant/puppet-release-focal.deb
 touch /var/vagrant_provision
