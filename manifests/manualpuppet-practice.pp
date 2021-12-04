@@ -3,7 +3,7 @@ include includecheck
 #include basicresourcetypes
 $ensure_value = 'absent'
 Class { 'basicresourcetypes::groupresourcetype':
-  ensure_val => 'absent',
+  ensure_val => 'present',
   users      => [
     {
       name   => 'test-user-1',
