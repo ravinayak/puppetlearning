@@ -9,7 +9,7 @@ tidy { 'tidytmp1-dir':
 }
 tidy { 'tidytmp2-dir':
   path      => '/tmp/tidy-tmp-2',
-  matches   => ['*.tmp*','*.pdf*'],su
+  matches   => ['*.tmp*','*.pdf*'],
   size      => '1k',
   age       => '1s',
   type      => 'atime',
@@ -28,4 +28,3 @@ tidy { 'tidytmp4-dir':
   recurse => 1,
   rmdirs  => true,
 }
-
