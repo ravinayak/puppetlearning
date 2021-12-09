@@ -8,3 +8,4 @@ mod 'includecheck',
 :git => 'git@github.com:ravinayak/includecheck.git',
 :tag => 'v2.0.0'
 mod 'puppet-hiera', '4.0.0'
+mod 'ghoneycutt-ssh', '3.62.0'
