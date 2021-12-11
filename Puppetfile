@@ -11,4 +11,4 @@ mod 'puppet-hiera', '4.0.0'
 mod 'ghoneycutt-ssh', '3.62.0'
 mod 'gppuppet',
 :git => 'git@github.com:ravinayak/gppuppet.git', 
-:tag =>'v1.0.4' # tags without v are giving problems
+:tag =>'v1.0.65' # tags without v are giving problems
