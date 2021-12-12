@@ -22,9 +22,17 @@ apt-get install vim-gtk -y
 apt-get install net-tools -y
 apt-get install openssh-server -y
 ufw allow ssh
+cp /data_synced_with_host/* /root/.ssh/
+touch /root/.gitconfig
+cp /data_synced_with_host/gitconfig_root /root/.gitconfig
+ssh -vT git@github.com
+cd /etc/puppetlabs/code/environments/production/
+cd puppet-learning
+sudo puppet apply manifests/run_puppet.pp
+# Below is a description of why we used the above commands and how you would have done it manually
 # Remember to put the github private key id_ecdsa of your account in root user's ~/.ssh in vagrant box. This is because vagrant box 
 # uses sudo command to perform git operations and the root should be able to authenticate to git as your account
-# cp ~/.ssh/id_ecdsa ~/vgboxes/host_synced_folders/
+# 
 # vagrant ssh
 # sudo su # Login as root
 # cp /data_synced_with_host/id_ecdsa ~/.ssh/
@@ -35,8 +43,9 @@ ufw allow ssh
 #	username = ravinayak
 #
 # exit # login as vagrant user
+# sudo cp /data_synced_with_host/* /root/.ssh/
 # sudo ssh -vT git@github.com # this should return a successful message of your authentication
-# sugo git clone <git_clone_url=git@github.com:ravinayak/puppet-learning.git>
+# sudo git clone <git_clone_url=git@github.com:ravinayak/puppet-learning.git>
 # 
 rm /home/vagrant/puppet-release-focal.deb
 touch /var/vagrant_provision
