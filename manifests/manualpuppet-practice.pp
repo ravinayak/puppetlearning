@@ -96,3 +96,4 @@ $params2 = {
     key                  => 'AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH5PFa4/QIJuMF1dtlC5hj+Lvq7/Va+UXXSNWgmvYpeMgKORHYglch0CmK+vz0QRFvPBEGV78bQ95VBcHQyeMxI='
   }
   Class {'gppuppet::advancedusageresources': }
+

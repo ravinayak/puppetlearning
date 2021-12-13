@@ -13,3 +13,4 @@ mod 'gppuppet',
 :git => 'git@github.com:ravinayak/gppuppet.git', 
 :tag =>'v1.0.123' # tags without v are giving problems
 mod 'puppetlabs-apache', '7.0.0'
+mod 'puppetlabs-concat', '7.1.1'
