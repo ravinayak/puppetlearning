@@ -92,6 +92,7 @@ $params2 = {
     gid                  => 5090,
     group_gids           => [5091, 5092],
     fileforuserinhomedir => 'welcome-neo1.txt',
-    key_type             => 'ssh-rsa',
-    key                  => 'AAAAB3NzaC1yc2EAAAADAQABAAABgQCdCqo/WINChXYwxFbXRCxtZY9NJrd0kLpHU+u1f78EVDe7XG50Jtoqix8c976Zc+DXrsm/jQtRS6jK8bH+SV13CuMHIov4z4Msqvoc1MfD5i8qRCr7+0310I/Tckxv3/JSUnu6mVj6q47jqg4wU3OHuec+3VLWrNM03Ri1JS2jzLysUyxYwO7Vi99EMofDKLnjGwiNrkiUauwxafISeNz+AEsdiqzNoasvBj20Fs75P5BK67te2D8P3XoCLUwkypSAqeZnurnFDO+nJDj4rnAYFBhMFIbh8U58JQQhJ5j2rDkcR1rJQkevWcZcplSWtXnPgGJkddGZqSh0RFyxlGXTN2TvjNzE2aZ2T6qR2BXVGDdLRM5MUILaHrCYqSCtSjL9/zu+dVrOZt+vE/MDtfRy5uJ4Ew5rvdE1FIOLfqBZJqyv0KyWsmaTNLRxdDaAT1IlOPxbQMq5FWiEJz1KWE6jiyOiAeX7+4/Wnq9rGgtqqyvaC76MumE4//clxzVaVEM='
+    key_type             => 'ecdsa-sha2-nistp256',
+    key                  => 'AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBH5PFa4/QIJuMF1dtlC5hj+Lvq7/Va+UXXSNWgmvYpeMgKORHYglch0CmK+vz0QRFvPBEGV78bQ95VBcHQyeMxI='
   }
+  Class {'gppuppet::advancedusageresources': }
