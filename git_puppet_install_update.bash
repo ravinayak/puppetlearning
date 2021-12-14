@@ -25,7 +25,9 @@ ufw allow ssh
 cp /data_synced_with_host/* /root/.ssh/
 touch /root/.gitconfig
 cp /data_synced_with_host/gitconfig_root /root/.gitconfig
-ssh -vT git@github.com
+cp /data_synced_with_host/.bashrc ~/.bashrc
+source ~/.bashrc
+# ssh -vT git@github.com: This throws an erro because git does not support shell access. Test it 1st thing when machine boots up
 cd /etc/puppetlabs/code/environments/production/
 cd puppet-learning
 sudo puppet apply manifests/run_puppet.pp

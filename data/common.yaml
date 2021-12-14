@@ -1,1 +1,9 @@
---- {}
+groups:
+  'neo2':
+    gid: 50045
+    system: false
+  'neo3':
+    gid: 50055
+    system: false
+  
+
