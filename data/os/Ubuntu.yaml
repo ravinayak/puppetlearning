@@ -1,29 +1,31 @@
-accounts:
-  users:
-    'neo2':
-      uid: 10080
-      gid: 50045
-      shell: /usr/bin/bash
-      system: false
-      groups: 
-        - 'engineering'
-        - 'automation'
-      comment: "Neo-2 Nayak"
-      sshkeys:
-        - 'AAAAB3NzaC1yc2EAAAADAQABAAABgQCqCDrDgZc7ki0HrxH9qS1wHTcaIM5pqKbhJNKvcoUSsvFSxK1eiLGBdh9h3+r0K7r0UT7D/XLL7TRNiGeUFnAeMGkmUu2r2YrmYG7lRhFL2VQlSOU61htb/WyaaJaDaXUnqRoFboelN3D3VBIOSNENU0v3136uzbkC96PmLqPOCsO2sJEGxzvEbueRZsoDoeEown0feX+zwW2LoH55UtEArDKXVUY8a5xQTX2/jYvzC+Br45aqKiION4WECSbfBOq68t9DjMg7WlMmMrAyuEsbrpetpOur9r2UQqRJQgteDTrFiGnGc7f7bIAeMzq0bJn43kTT//xy7MSrnlEcUyGdYe5Z01tc96SKi0nD0jOydLGvjCmo5ldzuWuFhfi41paC8WiMEYvQOZqoIkrbFRFNxyuKmj4UEJoNHATdfVqo/TlwQicEWq0mnCAynOuplnSy/x9pL3kVt4Si4YkyWgAz9K4jV/WyBh7skGMYkXy41/DTku1jX1w2Pe1bzyYaD5k='
-        - 'AAAAB3NzaC1yc2EAAAADAQABAAABgQCnidmuGHFF2joNt6HebIWr7jNc+5YyFxX+TSS+rkD5pnrJB9i3umZmDSWKRwY1NIqo2BL2jrZL1slJVzZ2SmBKpzXrGnPoyEBtLQ36GGCOwPFOFRhWo/ZnBXb4VlvEDRQKbhx/AUdIQVgPJkyfV7WIcGh+EvT0C3cI0nzVjOWlWNi4yC7bPm8vCJv5PX5w+D5SMOP2dRp4IbMQzw5YlsfeM3QQxcmc9ZBJuoybEAr/U4j4AOiR/OERvRRC0y1gCOCYgKZoRBycpc8OUA6Yzxc4cD/VadPHNqTnK+OctAB+G2cSmWYaSGUOxJqWhi8wDQeuqlnUEZGT+X59p8XprmmMdBUNUfLaQBW0DH1t8AAKu3em3Xcy08WPG3e9o6epDgnZJ+Q4ew1YT3ZhsjbBBDtHRlpYNe22FvALlyDjshn4sDeeeLyTHpGYHGif9KK84KPVhb4FOIzd0bC6EY5B9ybIjGuPc8ajWHJgTCxFDIv1QmQRUuxbEi7Et5qG7cGvNi0='
-      sshkey_group: 'neo2'
-      sshkey_owner: 'neo2'
-    'neo3':
-      uid: 10081
-      gid: 50055
-      shell: /usr/bin/bash
-      system: false
-      groups: 
-        - 'engineering'
-        - 'automation'
-      comment: "Neo-3 Nayak"
-      sshkeys:
-        - 'AAAAB3NzaC1yc2EAAAADAQABAAABgQCqRnO1dXndcGbyi9l4NQqDjjZj8SvaH6UvRMw6UcOXMOYC5m3/1cI6tbWFHcLgED0sMN1Q3YhoomE1L7qpBPobzLrpCjUSq3tQLOIH8NONm3mVf1qywl4bKIZfIq+Vbxi7GZeTZhLfsED6YCXFcS5WtXBF2psUgUx3cazfWpEoCiHhmlSbvzP6+jU640U6jtpl3PzxJKA0QowytH/lDthICCAayM2IbHX/BU2cRMiWfm5XWgL/SrbZf2iMjEXvxwyPE8Hc/aLITjYU0GKdRoQ2JCxr1qnqIY45j3vAmak9fdrekbI5ndGnRUX+8zcIDXX9uuSrWxEITXlAFHBm3daBKTcJ4zjt5BTLcc9+oY+PLljMlt21T1ZEhSXWxrMnLVjCqAgAV8YBkq4t3hNkWwvW7nasci1BqxEAE10qxbsYXWFSpLlruU6wUEOmpCARV2eWw4EYV2wTJIGhTtFpeFff3UzGRjCIhb7PZ1y22X7LjGD+I1Mr/RCUPA1O4Hh50BE='
-      sshkey_group: 'neo3'
-      sshkey_owner: 'neo3'
+accounts::users:
+  'neo2':
+    uid: 10080
+    gid: 10080
+    shell: /usr/bin/bash
+    system: false
+    groups: 
+      - 'engineering'
+      - 'automation'
+    comment: "Neo-2 Nayak"
+    sshkeys:
+      - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqCDrDgZc7ki0HrxH9qS1wHTcaIM5pqKbhJNKvcoUSsvFSxK1eiLGBdh9h3+r0K7r0UT7D/XLL7TRNiGeUFnAeMGkmUu2r2YrmYG7lRhFL2VQlSOU61htb/WyaaJaDaXUnqRoFboelN3D3VBIOSNENU0v3136uzbkC96PmLqPOCsO2sJEGxzvEbueRZsoDoeEown0feX+zwW2LoH55UtEArDKXVUY8a5xQTX2/jYvzC+Br45aqKiION4WECSbfBOq68t9DjMg7WlMmMrAyuEsbrpetpOur9r2UQqRJQgteDTrFiGnGc7f7bIAeMzq0bJn43kTT//xy7MSrnlEcUyGdYe5Z01tc96SKi0nD0jOydLGvjCmo5ldzuWuFhfi41paC8WiMEYvQOZqoIkrbFRFNxyuKmj4UEJoNHATdfVqo/TlwQicEWq0mnCAynOuplnSy/x9pL3kVt4Si4YkyWgAz9K4jV/WyBh7skGMYkXy41/DTku1jX1w2Pe1bzyYaD5k= neo2-1@maverick'
+    sshkey_group: 'neo2'
+    sshkey_owner: 'neo2'
+    password_max_age: 124
+    password: "%(lookup('neo2password')"
+  'neo3':
+    uid: 10081
+    gid: 10081
+    shell: /usr/bin/bash
+    system: false
+    groups: 
+      - 'engineering'
+      - 'automation'
+    comment: "Neo-3 Nayak"
+    sshkeys:
+      - 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqRnO1dXndcGbyi9l4NQqDjjZj8SvaH6UvRMw6UcOXMOYC5m3/1cI6tbWFHcLgED0sMN1Q3YhoomE1L7qpBPobzLrpCjUSq3tQLOIH8NONm3mVf1qywl4bKIZfIq+Vbxi7GZeTZhLfsED6YCXFcS5WtXBF2psUgUx3cazfWpEoCiHhmlSbvzP6+jU640U6jtpl3PzxJKA0QowytH/lDthICCAayM2IbHX/BU2cRMiWfm5XWgL/SrbZf2iMjEXvxwyPE8Hc/aLITjYU0GKdRoQ2JCxr1qnqIY45j3vAmak9fdrekbI5ndGnRUX+8zcIDXX9uuSrWxEITXlAFHBm3daBKTcJ4zjt5BTLcc9+oY+PLljMlt21T1ZEhSXWxrMnLVjCqAgAV8YBkq4t3hNkWwvW7nasci1BqxEAE10qxbsYXWFSpLlruU6wUEOmpCARV2eWw4EYV2wTJIGhTtFpeFff3UzGRjCIhb7PZ1y22X7LjGD+I1Mr/RCUPA1O4Hh50BE= neo-3-1@maverick'
+    sshkey_group: 'neo3'
+    sshkey_owner: 'neo3'
+    password_max_age: 123
+    password: "%{lookup('neo3password')}"

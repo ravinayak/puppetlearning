@@ -1,8 +1,8 @@
 groups:
-  'neo2':
+  'engineering':
     gid: 50045
     system: false
-  'neo3':
+  'automation':
     gid: 50055
     system: false
   
