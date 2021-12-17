@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo groupdel rescollectgrouptest-1 rescollectgrouptest-2 rescollectgrouptest-3 rescollectgrouptest-4
+sudo userdel rescollectest-1 rescollectest-2 rescollectest-3 rescollectest-4 rescollectest-5
+sudo rm -rf /etc/rescollecttest*

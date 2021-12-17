@@ -134,3 +134,42 @@
 #   }
 # }
 # gppuppet::manualpuppetpractice::defaultresources{'newdeaults':}
+# Class { 'gppuppet::advancedresourcetypes::advancedresourcetypesdefaults': }
+
+# In this example to demonstrate how virtual resources can solve the commonly seen problem of different modules requiring same packages
+# 2 solutions are possible in this case, one is to move all virtual resources into the top module, and include this module wherever the
+# virtual resources are needed. This works because (just like classes - where same class can be included multiple times - multiple 
+# declarations of same class using inlcude does not result in multiple instances being created - only 1 instance is created -and only 1nce
+# it is included in the catalog) only 1 instance of virtual resource is ever created no matter how many classes include the same virtual
+# resource
+# Details of the following example:
+#   1. virtualres: 
+#       a. virtualuser: neo5  : This user is needed to be the owner of files created in different modules
+#       b. virtualfile: /etc/filexec...: This file is used as the source for files in different modules
+#       Summary: We declare 'neo5' and 'fileexec' to be virtual resources so that dependent modules can inlcude them without any issue
+#   2. realizeres1:
+#       a. /etc/filerealizeres1: This file is owned by neo5 and has contents same as file declared as virtual file - fileexec
+#   3. realizeres2:
+#       Same as avove
+# 
+# realizeres1 and realizeres2 both depend on user neo5 and fileexec to work. If they both include those resources, there could be a conflict
+# that same resources are being created (or attempt to create) in different modules. To solve this problem we declare them in a virtual 
+# module and include the module in both realizeres1 and realizeres2
+
+# NOTE: For large software components which are reusable and needed by many other (large #) of other components, it is justified to create 
+#       a module and use it in those modules/classes which are dependent upon it. However for smaller pieces of components/software, it is 
+#       not justified to create modules. The piece of functinoality which is needed by more than 1 module can be written inside a class and 
+#       included in the module itself. This allows software components which depend critically on certain resources to wrap them in the 
+#       same module
+
+# include realizeres1
+# include realizeres2
+
+# We write two other modules realizewithclassres1 and realizewithclassres2 which include the dependency inside them inside a class and 
+# include both of them here for demonstrating that including modules which include the same class at 2 different places does not cause 
+# any conflict
+# include realizewithclassres1
+# include realizewithclassres2
+
+# Including virtualresource module so we can see different search scenarios of resource collectors
+include virtualres
