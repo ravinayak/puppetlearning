@@ -1,11 +1,11 @@
 #!/bin/bash
+sudo userdel rescollectest-1
+sudo userdel rescollectest-2
+sudo userdel rescollectest-3
+sudo userdel rescollectest-4
+sudo userdel rescollectest-5
 sudo groupdel rescollectgrouptest-1 
 sudo groupdel rescollectgrouptest-2 
 sudo groupdel rescollectgrouptest-3 
 sudo groupdel rescollectgrouptest-4
-sudo userdel rescollectest-1 
-sudo userdel rescollectest-2 
-sudo userdel rescollectest-3 
-sudo userdel rescollectest-4 
-sudo userdel rescollectest-5
 sudo rm -rf /etc/rescollecttest*
