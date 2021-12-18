@@ -171,5 +171,44 @@
 # include realizewithclassres1
 # include realizewithclassres2
 
-# Including virtualresource module so we can see different search scenarios of resource collectors
-include virtualres
+# Including virtualresource module so we can see different search scenarios of resource collectors. If we realize a virtual file resource 
+# before it is defined in the same file, then it actually creates that resource. There is no compilation error. One possible explanation 
+# could be that evluation order of virtual resources does not impact its realizability in the same file, but if you declare virtual 
+# resource in another file, and include it, then the order of realizing the resource and definition does matter
+# realize File['/etc/realizethisfilebeforedefine.txt']
+
+# If we try to realize a virtual resource before it is defined using resource collector, nothing is realized, nor any error is thrown. This
+# is consistent with what is written in the text
+
+File <| tag == realizebeforedefine |>
+
+@file{ '/etc/realizethisfilebeforedefine.txt':
+  ensure => present,
+  tag    => 'realizebeforedefine',
+}
+
+# Here we try to realize the virtual resources 1st and then include it - 2nd
+
+  # realize before virtual resource is defined: th is leads to a compilation error and halts the processing of manifest
+
+  # realize File['/etc/defineprerealize.txt']
+
+  # Resource Collector collecting before definition of file. This works and returns without any output because no matching virtual resource
+  # is found
+
+  File <| tag == searchablefiles |>
+
+  # Include the module which contains virtual resource on which resource collector and realize are called post those commands. Realize 
+  # before define
+  include virtualres
+
+  # Using exported resources requires puppetdb configuration on agent node. Installing is not difficult, considering it can be easily
+  # installed as an agent. However, Setting up SSL certificates can be tricky. Official recommendation is to setup a puppet server and use 
+  # it. Since we are running single nodes, it would make sense to configure SSL with Apache (if installed) or Nginx to use the SSL feature
+  # More configurations are rquired for testing export of resources
+  # It is important to go through this step and finalize an approach and to get it to work. Services like Nagios will require this setup
+  # of exported resources to work to be able to monitor nodes for all kinds of services etc
+  # Commenting out following because puppetdb configuration for node is not implemented
+  # storeconfigs and other settings needs to be done in puppet.conf file for exporting to work
+  # See this page: https://puppet.com/docs/puppetdb/7/install_via_module.html
+  # include exportedresourcessh

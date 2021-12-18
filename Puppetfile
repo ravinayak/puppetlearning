@@ -16,7 +16,7 @@ mod 'puppetlabs-apache', '7.0.0'
 mod 'puppetlabs-concat', '7.1.1'
 mod 'virtualres',
 :git => 'git@github.com:ravinayak/virtualres.git',
-:tag => 'v1.0.8'
+:tag => 'v1.0.13'
 mod 'realizeres1',
 :git => 'git@github.com:ravinayak/realizeres1.git',
 :tag => 'v1.0.1'
@@ -28,4 +28,7 @@ mod 'realizewithclassres1',
 :tag => 'v1.0.4'
 mod 'realizewithclassres2',
 :git => 'git@github.com:ravinayak/realizewithclassres2.git',
+:tag => 'v1.0.4'
+mod 'exportedresourcessh',
+:git => 'git@github.com:ravinayak/exportedresourcessh.git',
 :tag => 'v1.0.4'
