@@ -31,4 +31,4 @@ mod 'realizewithclassres2',
 :tag => 'v1.0.4'
 mod 'exportedresourcessh',
 :git => 'git@github.com:ravinayak/exportedresourcessh.git',
-:tag => 'v1.0.4'
+:tag => 'v1.0.5'

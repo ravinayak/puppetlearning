@@ -211,4 +211,5 @@ File <| tag == realizebeforedefine |>
   # Commenting out following because puppetdb configuration for node is not implemented
   # storeconfigs and other settings needs to be done in puppet.conf file for exporting to work
   # See this page: https://puppet.com/docs/puppetdb/7/install_via_module.html
+  # See the module page: https://forge.puppet.com/modules/puppetlabs/puppetdb#single-node-setup
   # include exportedresourcessh
