@@ -32,7 +32,7 @@ This module configures [Hiera](https://github.com/puppetlabs/hiera) for Puppet.
 - Hiera datadir
 - hiera-eyaml package
 - keys/ directory for eyaml
-- /etc/hiera.yaml for symlink
+- /codetestfiles/hiera.yaml for symlink
 
 ### Setup requirements
 
@@ -50,7 +50,7 @@ If you are using the eyaml backend on:
 Declaring the class with a given hierarchy is a pretty good starting point:
 
 This class will write out a hiera.yaml file in either
-/etc/puppetlabs/puppet/hiera.yaml or /etc/puppet/hiera.yaml (depending on if the
+/codetestfiles/puppetlabs/puppet/hiera.yaml or /codetestfiles/puppet/hiera.yaml (depending on if the
 node is running Puppet Enterprise or not).
 
 ```puppet
@@ -77,7 +77,7 @@ class { 'hiera':
 ** Note: For Hiera version 5 when calling the class, please remember to pass '5' to 'hiera_version' as in the example above. **
 ** Also please note that 'hierarchy' is an array of hash in version 5. **
 
-The resulting output in /etc/puppet/hiera.yaml:
+The resulting output in /codetestfiles/puppet/hiera.yaml:
 
 ```yaml
 ---
@@ -90,7 +90,7 @@ The resulting output in /etc/puppet/hiera.yaml:
   - common
 
 :yaml:
-   :datadir: /etc/puppet/hieradata
+   :datadir: /codetestfiles/puppet/hieradata
 ```
 ### Resulting output for Hiera 5
 
@@ -137,7 +137,7 @@ class { 'hiera':
 ```
 ## For Hiera version 5 please see the example above in beginning with Hiera.
 
-The resulting output in /etc/puppet/hiera.yaml:
+The resulting output in /codetestfiles/puppet/hiera.yaml:
 
 ```yaml
 ---
@@ -150,7 +150,7 @@ The resulting output in /etc/puppet/hiera.yaml:
   - common
 
 :yaml:
-   :datadir: /etc/puppet/hieradata
+   :datadir: /codetestfiles/puppet/hieradata
 
 :merge_behavior: deeper
 ```
@@ -182,7 +182,7 @@ done in lockstep.
 
 When generating a GPG keyring the system requires a good amount of entropy.
 To help generate entropy to speed up the process then rng-tools package on RHEL
-based systems or equivilent can be used.  Note: Update the ```/etc/sysconfig/rngd```
+based systems or equivilent can be used.  Note: Update the ```/codetestfiles/sysconfig/rngd```
 or equivilent file to set the EXTRAOPTIONS to
 ```EXTRAOPTIONS="-r /dev/urandom -o /dev/random -t 5"```
 
@@ -213,7 +213,7 @@ You can then use the GPG answer file to generate your keyring within the
 /gpg sub-directory in the ```$keysdir```
 
 ```bash
-gpg --batch --homedir /etc/puppetlabs/code-staging/keys/gpg --gen-key /tmp/gpg_answers
+gpg --batch --homedir /codetestfiles/puppetlabs/code-staging/keys/gpg --gen-key /tmp/gpg_answers
 ```
 
 #### Usage
@@ -232,7 +232,7 @@ class { 'hiera':
 }
 ```
 
-The resulting output in /etc/puppet/hiera.yaml:
+The resulting output in /codetestfiles/puppet/hiera.yaml:
 
 ```yaml
 ---
@@ -247,15 +247,15 @@ The resulting output in /etc/puppet/hiera.yaml:
   - common
 
 :yaml:
-   :datadir: /etc/puppet/hieradata
+   :datadir: /codetestfiles/puppet/hieradata
 
 
 :eyaml:
-   :datadir: /etc/puppet/hieradata
-   :pkcs7_private_key: /etc/puppet/keys/private_key.pkcs7.pem
-   :pkcs7_public_key:  /etc/puppet/keys/public_key.pkcs7.pem
+   :datadir: /codetestfiles/puppet/hieradata
+   :pkcs7_private_key: /codetestfiles/puppet/keys/private_key.pkcs7.pem
+   :pkcs7_public_key:  /codetestfiles/puppet/keys/public_key.pkcs7.pem
    :encrypt_method: "gpg"
-   :gpg_gnupghome: "/etc/puppet/keys/gpg"
+   :gpg_gnupghome: "/codetestfiles/puppet/keys/gpg"
    :gpg_recipients: "sihil@example.com,gtmtech@example.com,tpoulton@example.com"
 ```
 
@@ -305,7 +305,7 @@ The following parameters are available for the hiera class:
   ```yaml
   backend_options:
     json:
-      datadir: '/etc/puppetlabs/puppet/%{::environment}/jsondata'
+      datadir: '/codetestfiles/puppetlabs/puppet/%{::environment}/jsondata'
     redis:
       password: clearp@ssw0rd        # if your Redis server requires authentication
       port: 6380                     # unless present, defaults to 6379
@@ -328,16 +328,16 @@ The following parameters are available for the hiera class:
   puppet.conf `hiera_config` setting must match the configured value; see also
   `hiera::puppet_conf_manage`
   Default:
-    * `'/etc/puppet/hiera.yaml'` for Puppet Open Source
-    * `'/etc/puppetlabs/puppet/hiera.yaml'` for Puppet Enterprise
+    * `'/codetestfiles/puppet/hiera.yaml'` for Puppet Open Source
+    * `'/codetestfiles/puppetlabs/puppet/hiera.yaml'` for Puppet Enterprise
 * `create_symlink`
-  Whether to create the symlink `/etc/hiera.yaml`
+  Whether to create the symlink `/codetestfiles/hiera.yaml`
   Default: true
 * `datadir`
   The path to the directory where hiera will look for databases.
   Default:
-    * `'/etc/puppetlabs/puppet/hieradata'` for PE Puppet < 4
-    * `'/etc/puppetlabs/code/environments/%{::environment}/hieradata'` for Puppet >= 4
+    * `'/codetestfiles/puppetlabs/puppet/hieradata'` for PE Puppet < 4
+    * `'/codetestfiles/puppetlabs/code/environments/%{::environment}/hieradata'` for Puppet >= 4
 * `datadir_manage`
   Whether to create and manage the datadir as a file resource.
   Default: `true`
@@ -393,7 +393,7 @@ The following parameters are available for the hiera class:
   Specifies the ensure value of the hiera package. Default: 'present'
 * `confdir`
   The path to Puppet's confdir.
-  Default: `$::settings::confdir` which should be `'/etc/puppetlabs/puppet'`
+  Default: `$::settings::confdir` which should be `'/codetestfiles/puppetlabs/puppet'`
 * `logger`
   Which hiera logger to use.
   **Note**: You need to manage any package/gem dependencies yourself.
@@ -420,7 +420,7 @@ The following parameters are available for the hiera class:
   Default: `$confdir/keys`
   **Note:** If using PE 2013.x+ and code-manager set the keysdir under the
   ```$confdir/code-staging directory``` to allow the code manager to sync the
-  keys to all PuppetServers Example:  ```/etc/puppetlabs/code-staging/keys```
+  keys to all PuppetServers Example:  ```/codetestfiles/puppetlabs/code-staging/keys```
 * `puppet_conf_manage`
   Whether to manage the puppet.conf `hiera_config` value or not.
   Default: `true`

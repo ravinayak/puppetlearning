@@ -45,7 +45,7 @@
 #   TunnelDevice any:any
 #   PermitLocalCommand no
 #   HashKnownHosts no
-   GlobalKnownHostsFile /etc/ssh/ssh_known_hosts
+   GlobalKnownHostsFile /codetestfiles/ssh/ssh_known_hosts
 Host *
 #  GSSAPIAuthentication yes
   GSSAPIAuthentication yes

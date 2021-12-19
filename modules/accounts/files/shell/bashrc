@@ -12,13 +12,13 @@ alias mv='mv -i'
 PS1='\u@\h:\w\$ '
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
+if [ -f /codetestfiles/bashrc ]; then
+  . /codetestfiles/bashrc
 fi
 
 # Puppet specific definitions
-if [ -f /etc/bashrc.puppet ]; then
-  . /etc/bashrc.puppet
+if [ -f /codetestfiles/bashrc.puppet ]; then
+  . /codetestfiles/bashrc.puppet
 fi
 
 # Account holder definitions

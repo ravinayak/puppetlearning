@@ -259,7 +259,7 @@ These should not affect the functionality of the module.
 - hiera-eyaml failing to install with puppetserver\_gem as a provider [\#124](https://github.com/voxpupuli/puppet-hiera/issues/124)
 - ReadMe incorrect with regards master\_service [\#122](https://github.com/voxpupuli/puppet-hiera/issues/122)
 - Permissions issue on hieradata directory w/ vagrant [\#114](https://github.com/voxpupuli/puppet-hiera/issues/114)
-- Puppet 4 and Above Use /etc/puppetlabs/code/hiera.yaml as the default location for hiera.yaml [\#97](https://github.com/voxpupuli/puppet-hiera/issues/97)
+- Puppet 4 and Above Use /codetestfiles/puppetlabs/code/hiera.yaml as the default location for hiera.yaml [\#97](https://github.com/voxpupuli/puppet-hiera/issues/97)
 - Can't specify hiera::hierarchy in hiera [\#92](https://github.com/voxpupuli/puppet-hiera/issues/92)
 - eyaml backend config doesn't quite work with 2015.2.3  [\#91](https://github.com/voxpupuli/puppet-hiera/issues/91)
 - Hiera::params class attempts to set file ownership to `puppet` under Puppet Enterprise 2015.2 [\#76](https://github.com/voxpupuli/puppet-hiera/issues/76)
@@ -329,7 +329,7 @@ These should not affect the functionality of the module.
 **Merged pull requests:**
 
 - Only pass strings to versioncmp [\#98](https://github.com/voxpupuli/puppet-hiera/pull/98) ([hunner](https://github.com/hunner))
-- Added option to switch on/off the creation of the /etc/hiera.yaml [\#88](https://github.com/voxpupuli/puppet-hiera/pull/88) ([crayfishx](https://github.com/crayfishx))
+- Added option to switch on/off the creation of the /codetestfiles/hiera.yaml [\#88](https://github.com/voxpupuli/puppet-hiera/pull/88) ([crayfishx](https://github.com/crayfishx))
 - Fixing 2015.2 handling [\#86](https://github.com/voxpupuli/puppet-hiera/pull/86) ([hunner](https://github.com/hunner))
 - restart puppet master [\#71](https://github.com/voxpupuli/puppet-hiera/pull/71) ([vchepkov](https://github.com/vchepkov))
 

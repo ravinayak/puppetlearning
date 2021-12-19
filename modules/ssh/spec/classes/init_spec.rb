@@ -308,7 +308,7 @@ describe 'ssh' do
       it {
         should contain_file('ssh_known_hosts').with({
           'ensure' => 'file',
-          'path'   => '/etc/ssh/ssh_known_hosts',
+          'path'   => '/codetestfiles/ssh/ssh_known_hosts',
           'owner'  => 'root',
           'group'  => 'root',
           'mode'   => '0644',
@@ -324,7 +324,7 @@ describe 'ssh' do
       it {
         should contain_file('ssh_config').with({
           'ensure'  => 'file',
-          'path'    => '/etc/ssh/ssh_config',
+          'path'    => '/codetestfiles/ssh/ssh_config',
           'owner'   => 'root',
           'group'   => 'root',
           'mode'    => '0644',
@@ -343,7 +343,7 @@ describe 'ssh' do
       it {
         should contain_file('sshd_config').with({
           'ensure'  => 'file',
-          'path'    => '/etc/ssh/sshd_config',
+          'path'    => '/codetestfiles/ssh/sshd_config',
           'owner'   => 'root',
           'group'   => 'root',
           'mode'    => facts[:sshd_config_mode],
@@ -447,9 +447,9 @@ describe 'ssh' do
                                                  'hmac-sha1-etm@openssh.com',
         ],
         :ssh_config_proxy_command           => 'ssh -W %h:%p firewall.example.org',
-        :ssh_config_global_known_hosts_file => '/etc/ssh/ssh_known_hosts2',
-        :ssh_config_global_known_hosts_list => [ '/etc/ssh/ssh_known_hosts3',
-                   '/etc/ssh/ssh_known_hosts4',
+        :ssh_config_global_known_hosts_file => '/codetestfiles/ssh/ssh_known_hosts2',
+        :ssh_config_global_known_hosts_list => [ '/codetestfiles/ssh/ssh_known_hosts3',
+                   '/codetestfiles/ssh/ssh_known_hosts4',
   ],
         :ssh_config_user_known_hosts_file   => [ '.ssh/known_hosts1',
                                                  '.ssh/known_hosts2',
@@ -465,7 +465,7 @@ describe 'ssh' do
     it {
       should contain_file('ssh_config').with({
         'ensure'  => 'file',
-        'path'    => '/etc/ssh/ssh_config',
+        'path'    => '/codetestfiles/ssh/ssh_config',
         'owner'   => 'root',
         'group'   => 'root',
         'mode'    => '0644',
@@ -487,7 +487,7 @@ describe 'ssh' do
     it { should contain_file('ssh_config').with_content(/^\s*KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1$/) }
     it { should contain_file('ssh_config').with_content(/^\s*MACs hmac-md5-etm@openssh.com,hmac-sha1-etm@openssh.com$/) }
     it { should contain_file('ssh_config').with_content(/^\s*ProxyCommand ssh -W %h:%p firewall\.example\.org$/) }
-    it { should contain_file('ssh_config').with_content(/^\s*GlobalKnownHostsFile \/etc\/ssh\/ssh_known_hosts2 \/etc\/ssh\/ssh_known_hosts3 \/etc\/ssh\/ssh_known_hosts4$/) }
+    it { should contain_file('ssh_config').with_content(/^\s*GlobalKnownHostsFile \/codetestfiles\/ssh\/ssh_known_hosts2 \/codetestfiles\/ssh\/ssh_known_hosts3 \/codetestfiles\/ssh\/ssh_known_hosts4$/) }
     it { should contain_file('ssh_config').with_content(/^\s*UserKnownHostsFile \.ssh\/known_hosts1 \.ssh\/known_hosts2$/) }
     it { should contain_file('ssh_config').with_content(/^\s*HostbasedAuthentication yes$/) }
     it { should contain_file('ssh_config').with_content(/^\s*StrictHostKeyChecking ask$/) }
@@ -508,7 +508,7 @@ describe 'ssh' do
         :sshd_config_print_motd               => 'no',
   :sshd_config_print_last_log           => 'no',
         :sshd_config_use_dns                  => 'no',
-        :sshd_config_banner                   => '/etc/sshd_banner',
+        :sshd_config_banner                   => '/codetestfiles/sshd_banner',
         :sshd_authorized_keys_command         => '/path/to/command',
         :sshd_authorized_keys_command_user    => 'asdf',
         :sshd_banner_content                  => 'textinbanner',
@@ -537,8 +537,8 @@ describe 'ssh' do
         :sshd_config_serverkeybits            => '1024',
         :sshd_client_alive_count_max          => '0',
         :sshd_config_authkey_location         => '.ssh/authorized_keys',
-        :sshd_config_hostkey                  => [ '/etc/ssh/ssh_host_rsa_key',
-                                                '/etc/ssh/ssh_host_dsa_key',
+        :sshd_config_hostkey                  => [ '/codetestfiles/ssh/ssh_host_rsa_key',
+                                                '/codetestfiles/ssh/ssh_host_dsa_key',
         ],
         :sshd_config_strictmodes              => 'yes',
         :sshd_config_ciphers                  => [ 'aes128-cbc',
@@ -589,7 +589,7 @@ describe 'ssh' do
     it {
       should contain_file('sshd_config').with({
         'ensure'  => 'file',
-        'path'    => '/etc/ssh/sshd_config',
+        'path'    => '/codetestfiles/ssh/sshd_config',
         'owner'   => 'root',
         'group'   => 'root',
         'mode'    => '0600',
@@ -606,7 +606,7 @@ describe 'ssh' do
     it { should contain_file('sshd_config').with_content(/^PrintMotd no$/) }
     it { should contain_file('sshd_config').with_content(/^PrintLastLog no$/) }
     it { should contain_file('sshd_config').with_content(/^UseDNS no$/) }
-    it { should contain_file('sshd_config').with_content(/^Banner \/etc\/sshd_banner$/) }
+    it { should contain_file('sshd_config').with_content(/^Banner \/codetestfiles\/sshd_banner$/) }
     it { should contain_file('sshd_config').with_content(/^XAuthLocation \/opt\/ssh\/bin\/xauth$/) }
     it { should contain_file('sshd_config').with_content(/^Subsystem sftp \/opt\/ssh\/bin\/sftp$/) }
     it { should contain_file('sshd_config').with_content(/^PasswordAuthentication no$/) }
@@ -624,8 +624,8 @@ describe 'ssh' do
     it { should_not contain_file('sshd_config').with_content(/^\s*GSSAPIKeyExchange yes$/) }
     it { should contain_file('sshd_config').with_content(/^AcceptEnv L.*$/) }
     it { should contain_file('sshd_config').with_content(/^AuthorizedKeysFile .ssh\/authorized_keys/) }
-    it { should contain_file('sshd_config').with_content(/^HostKey \/etc\/ssh\/ssh_host_rsa_key/) }
-    it { should contain_file('sshd_config').with_content(/^HostKey \/etc\/ssh\/ssh_host_dsa_key/) }
+    it { should contain_file('sshd_config').with_content(/^HostKey \/codetestfiles\/ssh\/ssh_host_rsa_key/) }
+    it { should contain_file('sshd_config').with_content(/^HostKey \/codetestfiles\/ssh\/ssh_host_dsa_key/) }
     it { should contain_file('sshd_config').with_content(/^StrictModes yes$/) }
     it { should contain_file('sshd_config').with_content(/^PermitUserEnvironment no/) }
     it { should contain_file('sshd_config').with_content(/^Compression no$/) }
@@ -660,7 +660,7 @@ describe 'ssh' do
     it {
       should contain_file('sshd_banner').with({
         'ensure'  => 'file',
-        'path'    => '/etc/sshd_banner',
+        'path'    => '/codetestfiles/sshd_banner',
         'owner'   => 'root',
         'group'   => 'root',
         'mode'    => '0644',
@@ -1214,15 +1214,15 @@ describe 'sshd_config_print_last_log param' do
     end
 
     context 'with a certificate' do
-      let(:params) { { :sshd_config_hostcertificate => '/etc/ssh/ssh_host_key-cert.pub' } }
+      let(:params) { { :sshd_config_hostcertificate => '/codetestfiles/ssh/ssh_host_key-cert.pub' } }
 
-      it { should contain_file('sshd_config').with_content(/^HostCertificate \/etc\/ssh\/ssh_host_key-cert\.pub/) }
+      it { should contain_file('sshd_config').with_content(/^HostCertificate \/codetestfiles\/ssh\/ssh_host_key-cert\.pub/) }
     end
 
     context 'with multiple certs' do
-      let(:params) { { :sshd_config_hostcertificate => [ '/etc/ssh/ssh_host_key-cert.pub', '/etc/ssh/ssh_host_key-cert2.pub'] } }
+      let(:params) { { :sshd_config_hostcertificate => [ '/codetestfiles/ssh/ssh_host_key-cert.pub', '/codetestfiles/ssh/ssh_host_key-cert2.pub'] } }
 
-      it { should contain_file('sshd_config').with_content(/^HostCertificate \/etc\/ssh\/ssh_host_key-cert\.pub\nHostCertificate \/etc\/ssh\/ssh_host_key-cert2\.pub/)}
+      it { should contain_file('sshd_config').with_content(/^HostCertificate \/codetestfiles\/ssh\/ssh_host_key-cert\.pub\nHostCertificate \/codetestfiles\/ssh\/ssh_host_key-cert2\.pub/)}
     end
   end
 
@@ -1253,7 +1253,7 @@ describe 'sshd_config_print_last_log param' do
   end
 
   describe 'sshd_config_trustedusercakeys param' do
-    ['unset', '/etc/ssh/authorized_users_ca.pub', 'none'].each do |value|
+    ['unset', '/codetestfiles/ssh/authorized_users_ca.pub', 'none'].each do |value|
       context "set to #{value}" do
         let (:params) { { :sshd_config_trustedusercakeys => value } }
 
@@ -2381,7 +2381,7 @@ describe 'sshd_config_print_last_log param' do
       it {
         should contain_file('ssh_known_hosts').with({
           'ensure' => 'file',
-          'path'   => '/etc/ssh/ssh_known_hosts',
+          'path'   => '/codetestfiles/ssh/ssh_known_hosts',
           'owner'  => 'gh',
           'group'  => 'root',
           'mode'   => '0644',
@@ -2408,7 +2408,7 @@ describe 'sshd_config_print_last_log param' do
       it {
         should contain_file('ssh_known_hosts').with({
           'ensure' => 'file',
-          'path'   => '/etc/ssh/ssh_known_hosts',
+          'path'   => '/codetestfiles/ssh/ssh_known_hosts',
           'owner'  => 'root',
           'group'  => 'gh',
           'mode'   => '0644',
@@ -2435,7 +2435,7 @@ describe 'sshd_config_print_last_log param' do
       it {
         should contain_file('ssh_known_hosts').with({
           'ensure' => 'file',
-          'path'   => '/etc/ssh/ssh_known_hosts',
+          'path'   => '/codetestfiles/ssh/ssh_known_hosts',
           'owner'  => 'root',
           'group'  => 'root',
           'mode'   => '0666',
@@ -2499,7 +2499,7 @@ describe 'sshd_config_print_last_log param' do
         it {
           should contain_file('ssh_known_hosts').with({
             'ensure'  => 'file',
-            'path'    => '/etc/ssh/ssh_known_hosts',
+            'path'    => '/codetestfiles/ssh/ssh_known_hosts',
             'owner'   => 'root',
             'group'   => 'root',
             'mode'    => '0644',

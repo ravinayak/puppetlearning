@@ -36,7 +36,7 @@ Puppet::Type.type(:a2mod).provide(:gentoo, parent: Puppet::Provider) do
   end
 
   def self.initvars
-    @conf_file     = '/etc/conf.d/apache2'
+    @conf_file     = '/codetestfiles/conf.d/apache2'
     @filetype      = Puppet::Util::FileType.filetype(:flat).new(conf_file)
     @mod_resources = []
     @modules       = []

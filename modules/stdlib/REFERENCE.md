@@ -402,24 +402,24 @@ Multiple resources may be declared to manage multiple lines in the same file.
 * Ensure Example
 ```
 file_line { 'sudo_rule':
-  path => '/etc/sudoers',
+  path => '/codetestfiles/sudoers',
   line => '%sudo ALL=(ALL) ALL',
 }
 
 file_line { 'sudo_rule_nopw':
-  path => '/etc/sudoers',
+  path => '/codetestfiles/sudoers',
   line => '%sudonopw ALL=(ALL) NOPASSWD: ALL',
 }
 ```
 In this example, Puppet will ensure both of the specified lines are
-contained in the file /etc/sudoers.
+contained in the file /codetestfiles/sudoers.
 
 * Match Example
 
 ```
 file_line { 'bashrc_proxy':
   ensure => present,
-  path   => '/etc/bashrc',
+  path   => '/codetestfiles/bashrc',
   line   => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
   match  => '^export\ HTTP_PROXY\=',
 }
@@ -438,7 +438,7 @@ as in the following example:
 ```
 file_line { 'bashrc_proxy':
   ensure            => absent,
-  path              => '/etc/bashrc',
+  path              => '/codetestfiles/bashrc',
   match             => '^export\ HTTP_PROXY\=',
   match_for_absence => true,
 }
@@ -457,7 +457,7 @@ and no match:
 ```
 file_line { 'bashrc_proxy':
   ensure => absent,
-  path   => '/etc/bashrc',
+  path   => '/codetestfiles/bashrc',
   line   => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
 }
 ```
@@ -2111,7 +2111,7 @@ Uses same patterns as Dir#glob.
 ##### Example Usage:
 
 ```puppet
-$confs = glob(['/etc/**/*.conf', '/opt/**/*.conf'])
+$confs = glob(['/codetestfiles/**/*.conf', '/opt/**/*.conf'])
 ```
 
 #### `glob()`
@@ -2125,7 +2125,7 @@ Returns: `Any` Returns an Array of file entries of a directory or an Array of di
 ###### Example Usage:
 
 ```puppet
-$confs = glob(['/etc/**/*.conf', '/opt/**/*.conf'])
+$confs = glob(['/codetestfiles/**/*.conf', '/opt/**/*.conf'])
 ```
 
 ### <a name="grep"></a>`grep`
@@ -3093,7 +3093,7 @@ was not found or could not be parsed.
 ##### Example Usage:
 
 ```puppet
-$myhash = loadjson('/etc/puppet/data/myhash.json')
+$myhash = loadjson('/codetestfiles/puppet/data/myhash.json')
 $myhash = loadjson('https://example.local/my_hash.json')
 $myhash = loadjson('https://username:password@example.local/my_hash.json')
 $myhash = loadjson('no-file.json', {'default' => 'val
@@ -3112,7 +3112,7 @@ Returns: `Array|String|Hash` The data stored in the JSON file, the type dependin
 ###### Example Usage:
 
 ```puppet
-$myhash = loadjson('/etc/puppet/data/myhash.json')
+$myhash = loadjson('/codetestfiles/puppet/data/myhash.json')
 $myhash = loadjson('https://example.local/my_hash.json')
 $myhash = loadjson('https://username:password@example.local/my_hash.json')
 $myhash = loadjson('no-file.json', {'default' => 'val
@@ -3131,7 +3131,7 @@ was not found or could not be parsed.
 ##### Example Usage:
 
 ```puppet
-$myhash = loadyaml('/etc/puppet/data/myhash.yaml')
+$myhash = loadyaml('/codetestfiles/puppet/data/myhash.yaml')
 $myhash = loadyaml('https://example.local/my_hash.yaml')
 $myhash = loadyaml('https://username:password@example.local/my_hash.yaml')
 $myhash = loadyaml('no-file.yaml', {'default' => 'val
@@ -3150,7 +3150,7 @@ Returns: `Array|String|Hash` The data stored in the YAML file, the type dependin
 ###### Example Usage:
 
 ```puppet
-$myhash = loadyaml('/etc/puppet/data/myhash.yaml')
+$myhash = loadyaml('/codetestfiles/puppet/data/myhash.yaml')
 $myhash = loadyaml('https://example.local/my_hash.yaml')
 $myhash = loadyaml('https://username:password@example.local/my_hash.yaml')
 $myhash = loadyaml('no-file.yaml', {'default' => 'val
@@ -4709,7 +4709,7 @@ Convert an object into a String containing its Python representation
 # output Python to a file
 $listen = '0.0.0.0'
 $port = 8000
-file { '/opt/acme/etc/settings.py':
+file { '/opt/acme/codetestfiles/settings.py':
   content => inline_epp(@("SETTINGS")),
     LISTEN = <%= $listen.to_python %>
     PORT = <%= $mailserver.to_python %>
@@ -4731,7 +4731,7 @@ Returns: `Any`
 # output Python to a file
 $listen = '0.0.0.0'
 $port = 8000
-file { '/opt/acme/etc/settings.py':
+file { '/opt/acme/codetestfiles/settings.py':
   content => inline_epp(@("SETTINGS")),
     LISTEN = <%= $listen.to_python %>
     PORT = <%= $mailserver.to_python %>
@@ -4759,7 +4759,7 @@ Convert an object into a String containing its Ruby representation
 # output Ruby to a file
 $listen = '0.0.0.0'
 $port = 8000
-file { '/opt/acme/etc/settings.rb':
+file { '/opt/acme/codetestfiles/settings.rb':
   content => inline_epp(@("SETTINGS")),
     LISTEN = <%= $listen.to_ruby %>
     PORT = <%= $mailserver.to_ruby %>
@@ -4781,7 +4781,7 @@ Returns: `Any`
 # output Ruby to a file
 $listen = '0.0.0.0'
 $port = 8000
-file { '/opt/acme/etc/settings.rb':
+file { '/opt/acme/codetestfiles/settings.rb':
   content => inline_epp(@("SETTINGS")),
     LISTEN = <%= $listen.to_ruby %>
     PORT = <%= $mailserver.to_ruby %>

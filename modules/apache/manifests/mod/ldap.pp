@@ -36,7 +36,7 @@
 #
 # @example 
 #   class { 'apache::mod::ldap':
-#     ldap_trusted_global_cert_file => '/etc/pki/tls/certs/ldap-trust.crt',
+#     ldap_trusted_global_cert_file => '/codetestfiles/pki/tls/certs/ldap-trust.crt',
 #     ldap_trusted_global_cert_type => 'CA_DER',
 #     ldap_trusted_mode             => 'TLS',
 #     ldap_shared_cache_size        => '500000',

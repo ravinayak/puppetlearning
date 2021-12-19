@@ -13,24 +13,24 @@ Puppet::Type.newtype(:file_line) do
     * Ensure Example
     ```
     file_line { 'sudo_rule':
-      path => '/etc/sudoers',
+      path => '/codetestfiles/sudoers',
       line => '%sudo ALL=(ALL) ALL',
     }
 
     file_line { 'sudo_rule_nopw':
-      path => '/etc/sudoers',
+      path => '/codetestfiles/sudoers',
       line => '%sudonopw ALL=(ALL) NOPASSWD: ALL',
     }
     ```
     In this example, Puppet will ensure both of the specified lines are
-    contained in the file /etc/sudoers.
+    contained in the file /codetestfiles/sudoers.
 
     * Match Example
 
     ```
     file_line { 'bashrc_proxy':
       ensure => present,
-      path   => '/etc/bashrc',
+      path   => '/codetestfiles/bashrc',
       line   => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
       match  => '^export\ HTTP_PROXY\=',
     }
@@ -49,7 +49,7 @@ Puppet::Type.newtype(:file_line) do
     ```
     file_line { 'bashrc_proxy':
       ensure            => absent,
-      path              => '/etc/bashrc',
+      path              => '/codetestfiles/bashrc',
       match             => '^export\ HTTP_PROXY\=',
       match_for_absence => true,
     }
@@ -68,7 +68,7 @@ Puppet::Type.newtype(:file_line) do
     ```
     file_line { 'bashrc_proxy':
       ensure => absent,
-      path   => '/etc/bashrc',
+      path   => '/codetestfiles/bashrc',
       line   => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
     }
     ```

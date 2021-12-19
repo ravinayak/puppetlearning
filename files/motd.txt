@@ -1,1 +1,1 @@
-This is a sample motd file which should get copied by puppet to /etc
+This is a sample motd file which should get copied by puppet to /codetestfiles

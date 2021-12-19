@@ -1107,7 +1107,7 @@ Default value: ``false``
 
 Data type: `Any`
 
-Whether the additional config files in `/etc/apache2/conf-enabled` should be managed.
+Whether the additional config files in `/codetestfiles/apache2/conf-enabled` should be managed.
 
 Default value: `$apache::params::conf_enabled`
 
@@ -3485,7 +3485,7 @@ Installs and configures `mod_ldap`.
 
 ```puppet
 class { 'apache::mod::ldap':
-  ldap_trusted_global_cert_file => '/etc/pki/tls/certs/ldap-trust.crt',
+  ldap_trusted_global_cert_file => '/codetestfiles/pki/tls/certs/ldap-trust.crt',
   ldap_trusted_global_cert_type => 'CA_DER',
   ldap_trusted_mode             => 'TLS',
   ldap_shared_cache_size        => '500000',
@@ -6348,7 +6348,7 @@ Installs `mod_spelling`.
 ### <a name="apachemodssl"></a>`apache::mod::ssl`
 
 On most operating systems, the ssl.conf is placed in the module configuration directory. On Red Hat based operating systems, this
-file is placed in /etc/httpd/conf.d, the same location in which the RPM stores the configuration.
+file is placed in /codetestfiles/httpd/conf.d, the same location in which the RPM stores the configuration.
 
 To use SSL with a virtual host, you must either set the default_ssl_vhost parameter in ::apache to true or the ssl parameter in
 apache::vhost to true.
@@ -7170,7 +7170,7 @@ Sets up a balancer member inside a listening service configuration block in
 the load balancer's `apache.cfg`.
 
 This type will setup a balancer member inside a listening service
-configuration block in /etc/apache/apache.cfg on the load balancer.
+configuration block in /codetestfiles/apache/apache.cfg on the load balancer.
 Currently it only has the ability to specify the instance name, url and an
 array of options. More features can be added as needed. The best way to
 implement this is to export this resource for all apache balancer member
@@ -9888,7 +9888,7 @@ apache::vhost { 'suphp.example.com':
   docroot          => '/home/appuser/myphpapp',
   suphp_addhandler => 'x-httpd-php',
   suphp_engine     => 'on',
-  suphp_configpath => '/etc/php5/apache2',
+  suphp_configpath => '/codetestfiles/php5/apache2',
   directories      => { path => '/home/appuser/myphpapp',
     'suphp'        => { user => 'myappuser', group => 'myappgroup' },
   }
@@ -9910,7 +9910,7 @@ apache::vhost { 'suphp.example.com':
   docroot          => '/home/appuser/myphpapp',
   suphp_addhandler => 'x-httpd-php',
   suphp_engine     => 'on',
-  suphp_configpath => '/etc/php5/apache2',
+  suphp_configpath => '/codetestfiles/php5/apache2',
   directories      => { path => '/home/appuser/myphpapp',
     'suphp'        => { user => 'myappuser', group => 'myappgroup' },
   }
@@ -9932,7 +9932,7 @@ apache::vhost { 'suphp.example.com':
   docroot          => '/home/appuser/myphpapp',
   suphp_addhandler => 'x-httpd-php',
   suphp_engine     => 'on',
-  suphp_configpath => '/etc/php5/apache2',
+  suphp_configpath => '/codetestfiles/php5/apache2',
   directories      => { path => '/home/appuser/myphpapp',
     'suphp'        => { user => 'myappuser', group => 'myappgroup' },
   }
@@ -10555,7 +10555,7 @@ concatenation of the PEM-encoded certificate files in order of preference.
 ``` puppet
 apache::vhost { 'sample.example.net':
   ...
-  ssl_proxy_machine_cert => '/etc/httpd/ssl/client_certificate.pem',
+  ssl_proxy_machine_cert => '/codetestfiles/httpd/ssl/client_certificate.pem',
 }
 ```
 

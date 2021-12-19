@@ -7,7 +7,7 @@
 #   # output Ruby to a file
 #   $listen = '0.0.0.0'
 #   $port = 8000
-#   file { '/opt/acme/etc/settings.rb':
+#   file { '/opt/acme/codetestfiles/settings.rb':
 #     content => inline_epp(@("SETTINGS")),
 #       LISTEN = <%= $listen.to_ruby %>
 #       PORT = <%= $mailserver.to_ruby %>

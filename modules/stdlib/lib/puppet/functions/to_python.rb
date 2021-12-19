@@ -7,7 +7,7 @@
 #   # output Python to a file
 #   $listen = '0.0.0.0'
 #   $port = 8000
-#   file { '/opt/acme/etc/settings.py':
+#   file { '/opt/acme/codetestfiles/settings.py':
 #     content => inline_epp(@("SETTINGS")),
 #       LISTEN = <%= $listen.to_python %>
 #       PORT = <%= $mailserver.to_python %>

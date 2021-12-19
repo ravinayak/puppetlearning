@@ -4,20 +4,20 @@ describe 'hiera' do
   version = on(master, puppet('--version')).stdout
   case version
   when %r{Puppet Enterprise 3}
-    confdir = '/etc/puppetlabs/puppet'
+    confdir = '/codetestfiles/puppetlabs/puppet'
     datadir = "#{confdir}/hieradata"
     actualdir = datadir
     manifestsdir = "#{confdir}/environments/production/manifests"
   when %r{^3}
-    confdir = '/etc/puppet'
+    confdir = '/codetestfiles/puppet'
     datadir = "#{confdir}/hieradata"
     actualdir = datadir
     manifestsdir = "#{confdir}/manifests"
   when %r{^4}
-    confdir = '/etc/puppetlabs/puppet'
-    datadir = '/etc/puppetlabs/code/environments/%{::environment}/hieradata'
-    actualdir = '/etc/puppetlabs/code/environments/production/hieradata'
-    manifestsdir = '/etc/puppetlabs/code/environments/production/manifests'
+    confdir = '/codetestfiles/puppetlabs/puppet'
+    datadir = '/codetestfiles/puppetlabs/code/environments/%{::environment}/hieradata'
+    actualdir = '/codetestfiles/puppetlabs/code/environments/production/hieradata'
+    manifestsdir = '/codetestfiles/puppetlabs/code/environments/production/manifests'
   else
     raise "Unknown puppet version #{version}"
   end

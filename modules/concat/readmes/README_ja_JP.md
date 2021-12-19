@@ -52,7 +52,7 @@ concat::fragment { 'tmpfile':
 
 ~~~
 class motd {
-  $motd = '/etc/motd'
+  $motd = '/codetestfiles/motd'
 
   concat { $motd:
     owner => 'root',
@@ -67,10 +67,10 @@ class motd {
   }
 
   # let local users add to the motd by creating a file called
-  # /etc/motd.local
+  # /codetestfiles/motd.local
   concat::fragment{ 'motd_local':
     target => $motd,
-    source => '/etc/motd.local',
+    source => '/codetestfiles/motd.local',
     order  => '15'
   }
 }
@@ -84,7 +84,7 @@ define motd::register($content="", $order='10') {
   }
 
   concat::fragment{ "motd_fragment_$name":
-    target  => '/etc/motd',
+    target  => '/codetestfiles/motd',
     order   => $order,
     content => "    -- $body\n"
   }
@@ -101,7 +101,7 @@ class apache {
 }
 ~~~
 
-これらの2つのステップは、インストールされ、登録されたモジュールのリストを/etc/motdファイルに追加します。このファイルは、登録済みモジュールの`include`行を削除しただけであっても最新の状態を保ちます。システム管理者は、/etc/motd.localに書き込むことでリストにテキストを追加できます。
+これらの2つのステップは、インストールされ、登録されたモジュールのリストを/codetestfiles/motdファイルに追加します。このファイルは、登録済みモジュールの`include`行を削除しただけであっても最新の状態を保ちます。システム管理者は、/codetestfiles/motd.localに書き込むことでリストにテキストを追加できます。
 
 完成したmotdファイルは、以下のようになります。
 
@@ -111,7 +111,7 @@ class apache {
     -- Apache
     -- MySQL
 
-  <contents of /etc/motd.local>
+  <contents of /codetestfiles/motd.local>
 ~~~
 
 <a id="reference"></a>

@@ -1223,13 +1223,13 @@ This is a supported release
 ##### 2011-08-18 Puppet Labs <support@puppetlabs.com> - 2.1.1
 
 * Change facts.d paths to match Facter 2.0 paths.
-* /etc/facter/facts.d
-* /etc/puppetlabs/facter/facts.d
+* /codetestfiles/facter/facts.d
+* /codetestfiles/puppetlabs/facter/facts.d
 
 ##### 2011-08-17 Puppet Labs <support@puppetlabs.com> - 2.1.0
 
 * Add R.I. Pienaar's facts.d custom facter fact
-* facts defined in /etc/facts.d and /etc/puppetlabs/facts.d are
+* facts defined in /codetestfiles/facts.d and /codetestfiles/puppetlabs/facts.d are
   automatically loaded now.
 
 ##### 2011-08-04 Puppet Labs <support@puppetlabs.com> - 2.0.0

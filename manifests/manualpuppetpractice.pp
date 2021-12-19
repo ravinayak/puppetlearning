@@ -44,7 +44,7 @@
 #   'elements_arr'          => [1,2,3,4,5]
 # }
 
-# file { '/etc/templated_file.txt':
+# file { '/codetestfiles/templated_file.txt':
 #   ensure  => 'file',
 #   owner   => 'root',
 #   group   => 'root',
@@ -69,7 +69,7 @@
 #   }
 # }
 
-#   file { '/etc/templated_file_2.epp':
+#   file { '/codetestfiles/templated_file_2.epp':
 #     ensure  => file,
 #     owner   => 'root',
 #     group   => 'root',
@@ -112,7 +112,7 @@
 #   exec { 'apt-get install command':
 #     command   => 'sudo apt-get install gnupg rng-tools -y',
 #     path      => ['/usr/bin', '/usr/local/bin'],
-#     creates   => '/etc/systemd/system/dev-hwrng.device.wants/rng-tools.service',
+#     creates   => '/codetestfiles/systemd/system/dev-hwrng.device.wants/rng-tools.service',
 #     logoutput => true,
 #   }
 #   accounts::user { 'neo2':
@@ -128,7 +128,7 @@
 #   }
 # class gppuppet::manualpuppetpractice{
 #   define defaultresources{
-#     file {'/etc/defaultdefinedtype.txt':
+#     file {'/codetestfiles/defaultdefinedtype.txt':
 #       ensure => file,
 #     }
 #   }
@@ -145,10 +145,10 @@
 # Details of the following example:
 #   1. virtualres: 
 #       a. virtualuser: neo5  : This user is needed to be the owner of files created in different modules
-#       b. virtualfile: /etc/filexec...: This file is used as the source for files in different modules
+#       b. virtualfile: /codetestfiles/filexec...: This file is used as the source for files in different modules
 #       Summary: We declare 'neo5' and 'fileexec' to be virtual resources so that dependent modules can inlcude them without any issue
 #   2. realizeres1:
-#       a. /etc/filerealizeres1: This file is owned by neo5 and has contents same as file declared as virtual file - fileexec
+#       a. /codetestfiles/filerealizeres1: This file is owned by neo5 and has contents same as file declared as virtual file - fileexec
 #   3. realizeres2:
 #       Same as avove
 # 
@@ -175,14 +175,14 @@
 # before it is defined in the same file, then it actually creates that resource. There is no compilation error. One possible explanation 
 # could be that evluation order of virtual resources does not impact its realizability in the same file, but if you declare virtual 
 # resource in another file, and include it, then the order of realizing the resource and definition does matter
-# realize File['/etc/realizethisfilebeforedefine.txt']
+# realize File['/codetestfiles/realizethisfilebeforedefine.txt']
 
 # If we try to realize a virtual resource before it is defined using resource collector, nothing is realized, nor any error is thrown. This
 # is consistent with what is written in the text
 
 File <| tag == realizebeforedefine |>
 
-@file{ '/etc/realizethisfilebeforedefine.txt':
+@file{ '/codetestfiles/realizethisfilebeforedefine.txt':
   ensure => present,
   tag    => 'realizebeforedefine',
 }
@@ -191,7 +191,7 @@ File <| tag == realizebeforedefine |>
 
   # realize before virtual resource is defined: th is leads to a compilation error and halts the processing of manifest
 
-  # realize File['/etc/defineprerealize.txt']
+  # realize File['/codetestfiles/defineprerealize.txt']
 
   # Resource Collector collecting before definition of file. This works and returns without any output because no matching virtual resource
   # is found

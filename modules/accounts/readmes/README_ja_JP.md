@@ -53,11 +53,11 @@ accounts::user { 'bob':
 
 単純なbashrcおよびbash\ _profile rcファイルは、各アカウントのPuppetによって管理されます。これらのrcファイルは単純なエイリアスの追加、プロンプトの更新、パスへの~/binの追加を行い、(このモジュールでは管理されていない)次のファイルを以下の順序でソースします。
 
- 1. `/etc/bashrc`
- 2. `/etc/bashrc.puppet`
+ 1. `/codetestfiles/bashrc`
+ 2. `/codetestfiles/bashrc.puppet`
  3. `~/.bashrc.custom`
 
-アカウント所有者は、bashrc.customファイルを管理することでシェルをカスタマイズできます。さらに、システム管理者は、 '/etc/bashrc.puppet'ファイルを管理することで、bashシェルを持つすべてのアカウントに影響を与えるプロファイルの変更を行うことができます。
+アカウント所有者は、bashrc.customファイルを管理することでシェルをカスタマイズできます。さらに、システム管理者は、 '/codetestfiles/bashrc.puppet'ファイルを管理することで、bashシェルを持つすべてのアカウントに影響を与えるプロファイルの変更を行うことができます。
 
 電子メールフォワードをインストールするには、 `forward_content`または` forward_source`パラメータを使って `.forward`ファイルを設定します。
 

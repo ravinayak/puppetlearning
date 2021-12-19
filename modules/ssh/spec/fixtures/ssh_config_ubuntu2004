@@ -20,7 +20,7 @@
 # list of available options, their meanings and defaults, please see the
 # ssh_config(5) man page.
 
-Include /etc/ssh/ssh_config.d/*.conf
+Include /codetestfiles/ssh/ssh_config.d/*.conf
 
 # Host *
 #   ForwardAgent no
@@ -48,7 +48,7 @@ Include /etc/ssh/ssh_config.d/*.conf
 #   PermitLocalCommand no
 #   HashKnownHosts no
    HashKnownHosts yes
-   GlobalKnownHostsFile /etc/ssh/ssh_known_hosts
+   GlobalKnownHostsFile /codetestfiles/ssh/ssh_known_hosts
 Host *
 #  GSSAPIAuthentication yes
   GSSAPIAuthentication yes

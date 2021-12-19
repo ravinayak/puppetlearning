@@ -12,7 +12,7 @@ module Puppet::Parser::Functions
       Returns an Array of file entries of a directory or an Array of directories.
 
     @example Example Usage:
-      $confs = glob(['/etc/**/*.conf', '/opt/**/*.conf'])
+      $confs = glob(['/codetestfiles/**/*.conf', '/opt/**/*.conf'])
     DOC
   ) do |arguments|
     unless arguments.size == 1

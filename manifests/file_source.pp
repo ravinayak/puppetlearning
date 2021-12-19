@@ -1,3 +1,3 @@
-file { '/etc/motd': 
+file { '/codetestfiles/motd': 
 	source => '/examples/files/motd.txt'
 }

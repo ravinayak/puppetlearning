@@ -101,9 +101,9 @@ class apache::mod::prefork (
         }
       }
       else {
-        file_line { '/etc/sysconfig/httpd prefork enable':
+        file_line { '/codetestfiles/sysconfig/httpd prefork enable':
           ensure  => present,
-          path    => '/etc/sysconfig/httpd',
+          path    => '/codetestfiles/sysconfig/httpd',
           line    => '#HTTPD=/usr/sbin/httpd.worker',
           match   => '#?HTTPD=/usr/sbin/httpd.worker',
           require => Package['httpd'],

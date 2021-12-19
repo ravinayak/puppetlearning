@@ -40,10 +40,10 @@ ListenAddress <%= @sshd_listen_address %>
 <% end -%>
 
 # HostKey for protocol version 1
-#HostKey /etc/ssh/ssh_host_key
+#HostKey /codetestfiles/ssh/ssh_host_key
 # HostKeys for protocol version 2
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
+#HostKey /codetestfiles/ssh/ssh_host_rsa_key
+#HostKey /codetestfiles/ssh/ssh_host_dsa_key
 <% @sshd_config_hostkey_real.each do |hostkey| -%>
 HostKey <%= hostkey %>
 <% end -%>
@@ -93,7 +93,7 @@ AuthorizedKeysCommand <%= @sshd_authorized_keys_command %>
 AuthorizedKeysCommandUser <%= @sshd_authorized_keys_command_user %>
 <% end -%>
 
-# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+# For this to work you will also need host keys in /codetestfiles/ssh/ssh_known_hosts
 #RhostsRSAAuthentication no
 # similar for protocol version 2
 #HostbasedAuthentication no

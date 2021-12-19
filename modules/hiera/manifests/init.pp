@@ -8,8 +8,8 @@
 #
 # === Actions:
 #
-# Installs either /etc/puppet/hiera.yaml or /etc/puppetlabs/puppet/hiera.yaml.
-# Links /etc/hiera.yaml to the above file.
+# Installs either /codetestfiles/puppet/hiera.yaml or /codetestfiles/puppetlabs/puppet/hiera.yaml.
+# Links /codetestfiles/hiera.yaml to the above file.
 # Creates $datadir (if $datadir_manage == true).
 # Creates hiera.yaml in hiera version 5 format if hiera_version = 5 is passed to the class
 #
@@ -270,7 +270,7 @@ class hiera (
   }
   # Symlink for hiera command line tool
   if $create_symlink {
-    file { '/etc/hiera.yaml':
+    file { '/codetestfiles/hiera.yaml':
       ensure => symlink,
       target => $hiera_yaml,
     }

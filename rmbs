@@ -8,4 +8,4 @@ sudo groupdel rescollectgrouptest-1
 sudo groupdel rescollectgrouptest-2 
 sudo groupdel rescollectgrouptest-3 
 sudo groupdel rescollectgrouptest-4
-sudo rm -rf /etc/rescollecttest*
+sudo rm -rf /codetestfiles/rescollecttest*

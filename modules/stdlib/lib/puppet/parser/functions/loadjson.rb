@@ -18,7 +18,7 @@ module Puppet::Parser::Functions
       The data stored in the JSON file, the type depending on the type of data that was stored.
 
     @example Example Usage:
-      $myhash = loadjson('/etc/puppet/data/myhash.json')
+      $myhash = loadjson('/codetestfiles/puppet/data/myhash.json')
       $myhash = loadjson('https://example.local/my_hash.json')
       $myhash = loadjson('https://username:password@example.local/my_hash.json')
       $myhash = loadjson('no-file.json', {'default' => 'value'})

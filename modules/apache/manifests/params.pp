@@ -59,8 +59,8 @@ class apache::params inherits ::apache::version {
     $apache_name          = "${_scl_httpd_name}-httpd"
     $service_name         = "${_scl_httpd_name}-httpd"
     $httpd_root           = "/opt/rh/${_scl_httpd_name}/root"
-    $httpd_dir            = "${httpd_root}/etc/httpd"
-    $server_root          = "${httpd_root}/etc/httpd"
+    $httpd_dir            = "${httpd_root}/codetestfiles/httpd"
+    $server_root          = "${httpd_root}/codetestfiles/httpd"
     $conf_dir             = "${httpd_dir}/conf"
     $confd_dir            = "${httpd_dir}/conf.d"
     $puppet_ssl_dir       = "${httpd_dir}/puppet_ssl"
@@ -80,8 +80,8 @@ class apache::params inherits ::apache::version {
     $lib_path             = 'modules'
     $mpm_module           = 'prefork'
     $dev_packages         = "${_scl_httpd_name}-httpd-devel"
-    $default_ssl_cert     = '/etc/pki/tls/certs/localhost.crt'
-    $default_ssl_key      = '/etc/pki/tls/private/localhost.key'
+    $default_ssl_cert     = '/codetestfiles/pki/tls/certs/localhost.crt'
+    $default_ssl_key      = '/codetestfiles/pki/tls/private/localhost.key'
     $ssl_sessioncache     = '/var/cache/mod_ssl/scache(512000)'
     $passenger_conf_file  = 'passenger_extra.conf'
     $passenger_conf_package_file = 'passenger.conf'
@@ -108,7 +108,7 @@ class apache::params inherits ::apache::version {
     $max_keepalive_requests = 100
     $fastcgi_lib_path     = undef
     $mime_support_package = 'mailcap'
-    $mime_types_config    = '/etc/mime.types'
+    $mime_types_config    = '/codetestfiles/mime.types'
     $docroot              = "${httpd_root}/var/www/html"
     $alias_icons_path     = $facts['operatingsystemmajrelease'] ? {
       '7'     => "${httpd_root}/usr/share/httpd/icons",
@@ -130,7 +130,7 @@ class apache::params inherits ::apache::version {
     $modsec_version       = 1
     $modsec_crs_package   = 'mod_security_crs'
     $modsec_crs_path      = '/usr/lib/modsecurity.d'
-    $modsec_dir           = '/etc/httpd/modsecurity.d'
+    $modsec_dir           = '/codetestfiles/httpd/modsecurity.d'
     $secpcrematchlimit = 1500
     $secpcrematchlimitrecursion = 1500
     $modsec_secruleengine = 'On'
@@ -166,8 +166,8 @@ class apache::params inherits ::apache::version {
     $root_group           = 'root'
     $apache_name          = 'httpd'
     $service_name         = 'httpd'
-    $httpd_dir            = '/etc/httpd'
-    $server_root          = '/etc/httpd'
+    $httpd_dir            = '/codetestfiles/httpd'
+    $server_root          = '/codetestfiles/httpd'
     $conf_dir             = "${httpd_dir}/conf"
     $confd_dir            = "${httpd_dir}/conf.d"
     $puppet_ssl_dir       = "${httpd_dir}/puppet_ssl"
@@ -192,8 +192,8 @@ class apache::params inherits ::apache::version {
     $lib_path             = 'modules'
     $mpm_module           = 'prefork'
     $dev_packages         = 'httpd-devel'
-    $default_ssl_cert     = '/etc/pki/tls/certs/localhost.crt'
-    $default_ssl_key      = '/etc/pki/tls/private/localhost.key'
+    $default_ssl_cert     = '/codetestfiles/pki/tls/certs/localhost.crt'
+    $default_ssl_key      = '/codetestfiles/pki/tls/private/localhost.key'
     $ssl_sessioncache     = '/var/cache/mod_ssl/scache(512000)'
     $passenger_conf_file  = 'passenger_extra.conf'
     $passenger_conf_package_file = 'passenger.conf'
@@ -280,7 +280,7 @@ class apache::params inherits ::apache::version {
     $max_keepalive_requests = 100
     $fastcgi_lib_path     = undef
     $mime_support_package = 'mailcap'
-    $mime_types_config    = '/etc/mime.types'
+    $mime_types_config    = '/codetestfiles/mime.types'
     $docroot              = '/var/www/html'
     $alias_icons_path     = $facts['operatingsystemmajrelease'] ? {
       '6'     => '/var/www/icons',
@@ -302,7 +302,7 @@ class apache::params inherits ::apache::version {
     $modsec_version       = 1
     $modsec_crs_package   = 'mod_security_crs'
     $modsec_crs_path      = '/usr/lib/modsecurity.d'
-    $modsec_dir           = '/etc/httpd/modsecurity.d'
+    $modsec_dir           = '/codetestfiles/httpd/modsecurity.d'
     $secpcrematchlimit = 1500
     $secpcrematchlimitrecursion = 1500
     $modsec_secruleengine = 'On'
@@ -337,8 +337,8 @@ class apache::params inherits ::apache::version {
     $root_group          = 'root'
     $apache_name         = 'apache2'
     $service_name        = 'apache2'
-    $httpd_dir           = '/etc/apache2'
-    $server_root         = '/etc/apache2'
+    $httpd_dir           = '/codetestfiles/apache2'
+    $server_root         = '/codetestfiles/apache2'
     $conf_dir            = $httpd_dir
     $confd_dir           = "${httpd_dir}/conf.d"
     # Overwrite conf_enabled causes errors with Shibboleth when enabled on Ubuntu 18.04
@@ -355,12 +355,12 @@ class apache::params inherits ::apache::version {
     $logroot_mode        = undef
     $lib_path            = '/usr/lib/apache2/modules'
     $mpm_module          = 'worker'
-    $default_ssl_cert    = '/etc/ssl/certs/ssl-cert-snakeoil.pem'
-    $default_ssl_key     = '/etc/ssl/private/ssl-cert-snakeoil.key'
+    $default_ssl_cert    = '/codetestfiles/ssl/certs/ssl-cert-snakeoil.pem'
+    $default_ssl_key     = '/codetestfiles/ssl/private/ssl-cert-snakeoil.key'
     $ssl_sessioncache    = "\${APACHE_RUN_DIR}/ssl_scache(512000)"
     $suphp_addhandler    = 'x-httpd-php'
     $suphp_engine        = 'off'
-    $suphp_configpath    = '/etc/php5/apache2'
+    $suphp_configpath    = '/codetestfiles/php5/apache2'
     if ($::operatingsystem == 'Ubuntu') or ($::operatingsystem == 'Debian' and versioncmp($::operatingsystemmajrelease, '11') < 0) {
       $php_version = $facts['operatingsystemmajrelease'] ? {
         '9'     => '7.0', # Debian Stretch
@@ -447,7 +447,7 @@ class apache::params inherits ::apache::version {
     $max_keepalive_requests = 100
     $fastcgi_lib_path       = '/var/lib/apache2/fastcgi'
     $mime_support_package = 'mime-support'
-    $mime_types_config    = '/etc/mime.types'
+    $mime_types_config    = '/codetestfiles/mime.types'
     $docroot              = '/var/www/html'
     $cas_cookie_path      = '/var/cache/apache2/mod_auth_cas/'
     $mellon_lock_file     = undef
@@ -456,7 +456,7 @@ class apache::params inherits ::apache::version {
     $modsec_version       = 1
     $modsec_crs_package   = 'modsecurity-crs'
     $modsec_crs_path      = '/usr/share/modsecurity-crs'
-    $modsec_dir           = '/etc/modsecurity'
+    $modsec_dir           = '/codetestfiles/modsecurity'
     $secpcrematchlimit = 1500
     $secpcrematchlimitrecursion = 1500
     $modsec_secruleengine = 'On'
@@ -526,7 +526,7 @@ class apache::params inherits ::apache::version {
     $root_group       = 'wheel'
     $apache_name      = 'apache24'
     $service_name     = 'apache24'
-    $httpd_dir        = '/usr/local/etc/apache24'
+    $httpd_dir        = '/usr/local/codetestfiles/apache24'
     $server_root      = '/usr/local'
     $conf_dir         = $httpd_dir
     $confd_dir        = "${httpd_dir}/Includes"
@@ -544,8 +544,8 @@ class apache::params inherits ::apache::version {
     $lib_path         = '/usr/local/libexec/apache24'
     $mpm_module       = 'prefork'
     $dev_packages     = undef
-    $default_ssl_cert = '/usr/local/etc/apache24/server.crt'
-    $default_ssl_key  = '/usr/local/etc/apache24/server.key'
+    $default_ssl_cert = '/usr/local/codetestfiles/apache24/server.crt'
+    $default_ssl_key  = '/usr/local/codetestfiles/apache24/server.key'
     $ssl_sessioncache  = '/var/run/ssl_scache(512000)'
     $passenger_conf_file = 'passenger.conf'
     $passenger_conf_package_file = undef
@@ -586,7 +586,7 @@ class apache::params inherits ::apache::version {
     $max_keepalive_requests = 100
     $fastcgi_lib_path     = undef # TODO: revisit
     $mime_support_package = 'misc/mime-support'
-    $mime_types_config    = '/usr/local/etc/mime.types'
+    $mime_types_config    = '/usr/local/codetestfiles/mime.types'
     $wsgi_socket_prefix   = undef
     $docroot              = '/usr/local/www/apache24/data'
     $alias_icons_path     = '/usr/local/www/apache24/icons'
@@ -600,7 +600,7 @@ class apache::params inherits ::apache::version {
     $root_group       = 'wheel'
     $apache_name      = 'www-servers/apache'
     $service_name     = 'apache2'
-    $httpd_dir        = '/etc/apache2'
+    $httpd_dir        = '/codetestfiles/apache2'
     $server_root      = '/var/www'
     $conf_dir         = $httpd_dir
     $confd_dir        = "${httpd_dir}/conf.d"
@@ -617,8 +617,8 @@ class apache::params inherits ::apache::version {
     $lib_path         = '/usr/lib/apache2/modules'
     $mpm_module       = 'prefork'
     $dev_packages     = undef
-    $default_ssl_cert = '/etc/ssl/apache2/server.crt'
-    $default_ssl_key  = '/etc/ssl/apache2/server.key'
+    $default_ssl_cert = '/codetestfiles/ssl/apache2/server.crt'
+    $default_ssl_key  = '/codetestfiles/ssl/apache2/server.key'
     $ssl_sessioncache  = '/var/run/ssl_scache(512000)'
     $passenger_root   = '/usr'
     $passenger_ruby   = '/usr/bin/ruby'
@@ -627,7 +627,7 @@ class apache::params inherits ::apache::version {
     $passenger_default_ruby = undef
     $suphp_addhandler = 'x-httpd-php'
     $suphp_engine     = 'off'
-    $suphp_configpath = '/etc/php5/apache2'
+    $suphp_configpath = '/codetestfiles/php5/apache2'
     $php_version      = '5'
     $mod_packages     = {
       # NOTE: I list here only modules that are not included in www-servers/apache
@@ -656,7 +656,7 @@ class apache::params inherits ::apache::version {
     $max_keepalive_requests = 100
     $fastcgi_lib_path     = undef # TODO: revisit
     $mime_support_package = 'app-misc/mime-types'
-    $mime_types_config    = '/etc/mime.types'
+    $mime_types_config    = '/codetestfiles/mime.types'
     $wsgi_socket_prefix   = undef
     $docroot              = '/var/www/localhost/htdocs'
     $alias_icons_path     = '/usr/share/apache2/icons'
@@ -671,8 +671,8 @@ class apache::params inherits ::apache::version {
     $root_group          = 'root'
     $apache_name         = 'apache2'
     $service_name        = 'apache2'
-    $httpd_dir           = '/etc/apache2'
-    $server_root         = '/etc/apache2'
+    $httpd_dir           = '/codetestfiles/apache2'
+    $server_root         = '/codetestfiles/apache2'
     $conf_dir            = $httpd_dir
     $confd_dir           = "${httpd_dir}/conf.d"
     $conf_enabled        = undef
@@ -689,15 +689,15 @@ class apache::params inherits ::apache::version {
     $lib_path            = '/usr/lib64/apache2' #changes for some modules based on mpm
     $mpm_module          = 'prefork'
     if versioncmp($::operatingsystemrelease, '15') < 0 {
-      $default_ssl_cert    = '/etc/apache2/ssl.crt/server.crt'
-      $default_ssl_key     = '/etc/apache2/ssl.key/server.key'
+      $default_ssl_cert    = '/codetestfiles/apache2/ssl.crt/server.crt'
+      $default_ssl_key     = '/codetestfiles/apache2/ssl.key/server.key'
       $php_version         = '5'
     } else {
-      $default_ssl_cert    = '/etc/apache2/ssl.crt/default-server.crt'
-      $default_ssl_key     = '/etc/apache2/ssl.key/default-server.key'
+      $default_ssl_cert    = '/codetestfiles/apache2/ssl.crt/default-server.crt'
+      $default_ssl_key     = '/codetestfiles/apache2/ssl.key/default-server.key'
       $php_version         = '7'
     }
-    $suphp_configpath    = "/etc/php${php_version}/apache2"
+    $suphp_configpath    = "/codetestfiles/php${php_version}/apache2"
     $ssl_sessioncache    = '/var/lib/apache2/ssl_scache(512000)'
     $suphp_addhandler    = 'x-httpd-php'
     $suphp_engine        = 'off'
@@ -735,7 +735,7 @@ class apache::params inherits ::apache::version {
     $max_keepalive_requests = 100
     $fastcgi_lib_path       = '/var/lib/apache2/fastcgi'
     $mime_support_package = 'aaa_base'
-    $mime_types_config    = '/etc/mime.types'
+    $mime_types_config    = '/codetestfiles/mime.types'
     $docroot              = '/srv/www'
     $cas_cookie_path      = '/var/cache/apache2/mod_auth_cas/'
     $mellon_lock_file     = undef
@@ -748,7 +748,7 @@ class apache::params inherits ::apache::version {
     $modsec_crs_package   = undef
     $modsec_crs_path      = undef
     $modsec_default_rules = undef
-    $modsec_dir           = '/etc/apache2/modsecurity'
+    $modsec_dir           = '/codetestfiles/apache2/modsecurity'
     $secpcrematchlimit = 1500
     $secpcrematchlimitrecursion = 1500
     $modsec_secruleengine = 'On'

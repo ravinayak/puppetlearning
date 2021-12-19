@@ -5,7 +5,7 @@
 # the load balancer's `apache.cfg`.
 #   
 # This type will setup a balancer member inside a listening service
-# configuration block in /etc/apache/apache.cfg on the load balancer.
+# configuration block in /codetestfiles/apache/apache.cfg on the load balancer.
 # Currently it only has the ability to specify the instance name, url and an
 # array of options. More features can be added as needed. The best way to
 # implement this is to export this resource for all apache balancer member

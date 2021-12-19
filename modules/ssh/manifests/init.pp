@@ -11,7 +11,7 @@ class ssh (
   $ssh_package_source                         = 'USE_DEFAULTS',
   $ssh_package_adminfile                      = 'USE_DEFAULTS',
   $ssh_config_hash_known_hosts                = 'USE_DEFAULTS',
-  $ssh_config_path                            = '/etc/ssh/ssh_config',
+  $ssh_config_path                            = '/codetestfiles/ssh/ssh_config',
   $ssh_config_owner                           = 'root',
   $ssh_config_group                           = 'root',
   $ssh_config_mode                            = '0644',
@@ -31,7 +31,7 @@ class ssh (
   $ssh_sendenv                                = 'USE_DEFAULTS',
   $ssh_gssapiauthentication                   = 'yes',
   $ssh_gssapidelegatecredentials              = undef,
-  $sshd_config_path                           = '/etc/ssh/sshd_config',
+  $sshd_config_path                           = '/codetestfiles/ssh/sshd_config',
   $sshd_config_owner                          = 'root',
   $sshd_config_group                          = 'root',
   $sshd_config_loglevel                       = 'INFO',
@@ -104,7 +104,7 @@ class ssh (
   $ssh_key_ensure                             = 'present',
   $ssh_key_import                             = true,
   $ssh_key_type                               = 'ssh-rsa',
-  $ssh_config_global_known_hosts_file         = '/etc/ssh/ssh_known_hosts',
+  $ssh_config_global_known_hosts_file         = '/codetestfiles/ssh/ssh_known_hosts',
   $ssh_config_global_known_hosts_list         = undef,
   $ssh_config_global_known_hosts_owner        = 'root',
   $ssh_config_global_known_hosts_group        = 'root',
@@ -152,7 +152,7 @@ class ssh (
       } else {
         $default_sshd_config_serverkeybits = undef
       }
-      $default_sshd_config_hostkey             = [ '/etc/ssh/ssh_host_rsa_key' ]
+      $default_sshd_config_hostkey             = [ '/codetestfiles/ssh/ssh_host_rsa_key' ]
       $default_sshd_addressfamily              = 'any'
       $default_sshd_config_tcp_keepalive       = 'yes'
       $default_sshd_config_permittunnel        = 'no'
@@ -177,7 +177,7 @@ class ssh (
       $default_sshd_acceptenv                  = true
       $default_service_hasstatus               = true
       $default_sshd_config_serverkeybits       = '1024'
-      $default_sshd_config_hostkey             = [ '/etc/ssh/ssh_host_rsa_key' ]
+      $default_sshd_config_hostkey             = [ '/codetestfiles/ssh/ssh_host_rsa_key' ]
       $default_sshd_addressfamily              = 'any'
       $default_sshd_config_tcp_keepalive       = 'yes'
       $default_sshd_config_permittunnel        = 'no'
@@ -207,10 +207,10 @@ class ssh (
       case $::operatingsystemrelease {
         '16.04': {
           $default_sshd_config_hostkey = [
-            '/etc/ssh/ssh_host_rsa_key',
-            '/etc/ssh/ssh_host_dsa_key',
-            '/etc/ssh/ssh_host_ecdsa_key',
-            '/etc/ssh/ssh_host_ed25519_key',
+            '/codetestfiles/ssh/ssh_host_rsa_key',
+            '/codetestfiles/ssh/ssh_host_dsa_key',
+            '/codetestfiles/ssh/ssh_host_ecdsa_key',
+            '/codetestfiles/ssh/ssh_host_ed25519_key',
           ]
           $default_ssh_config_hash_known_hosts        = 'yes'
           $default_sshd_config_xauth_location         = undef
@@ -236,10 +236,10 @@ class ssh (
         }
         '18.04': {
           $default_sshd_config_hostkey = [
-            '/etc/ssh/ssh_host_rsa_key',
-            '/etc/ssh/ssh_host_dsa_key',
-            '/etc/ssh/ssh_host_ecdsa_key',
-            '/etc/ssh/ssh_host_ed25519_key',
+            '/codetestfiles/ssh/ssh_host_rsa_key',
+            '/codetestfiles/ssh/ssh_host_dsa_key',
+            '/codetestfiles/ssh/ssh_host_ecdsa_key',
+            '/codetestfiles/ssh/ssh_host_ed25519_key',
           ]
           $default_ssh_config_hash_known_hosts        = 'yes'
           $default_sshd_config_xauth_location         = undef
@@ -267,7 +267,7 @@ class ssh (
           $default_service_hasstatus                  = true
           $default_ssh_config_forward_x11_trusted     = 'yes'
           $default_ssh_config_hash_known_hosts        = 'yes'
-          $default_ssh_config_include                 = '/etc/ssh/ssh_config.d/*.conf'
+          $default_ssh_config_include                 = '/codetestfiles/ssh/ssh_config.d/*.conf'
           $default_ssh_gssapiauthentication           = 'yes'
           $default_ssh_package_adminfile              = undef
           $default_ssh_package_source                 = undef
@@ -275,7 +275,7 @@ class ssh (
           $default_sshd_acceptenv                     = true
           $default_sshd_addressfamily                 = 'any'
           $default_sshd_config_hostkey                = []
-          $default_sshd_config_include                = '/etc/ssh/sshd_config.d/*.conf'
+          $default_sshd_config_include                = '/codetestfiles/ssh/sshd_config.d/*.conf'
           $default_sshd_config_mode                   = '0600'
           $default_sshd_config_permittunnel           = undef
           $default_sshd_config_print_motd             = 'no'
@@ -293,9 +293,9 @@ class ssh (
         }
         /^10.*/: {
           $default_sshd_config_hostkey = [
-            '/etc/ssh/ssh_host_rsa_key',
-            '/etc/ssh/ssh_host_ecdsa_key',
-            '/etc/ssh/ssh_host_ed25519_key',
+            '/codetestfiles/ssh/ssh_host_rsa_key',
+            '/codetestfiles/ssh/ssh_host_ecdsa_key',
+            '/codetestfiles/ssh/ssh_host_ed25519_key',
           ]
           $default_sshd_config_mode                = '0600'
           $default_sshd_use_pam                    = 'yes'
@@ -321,9 +321,9 @@ class ssh (
         }
         /^9.*/: {
           $default_sshd_config_hostkey = [
-            '/etc/ssh/ssh_host_rsa_key',
-            '/etc/ssh/ssh_host_ecdsa_key',
-            '/etc/ssh/ssh_host_ed25519_key',
+            '/codetestfiles/ssh/ssh_host_rsa_key',
+            '/codetestfiles/ssh/ssh_host_ecdsa_key',
+            '/codetestfiles/ssh/ssh_host_ed25519_key',
           ]
           $default_sshd_config_mode                = '0600'
           $default_sshd_use_pam                    = 'yes'
@@ -348,7 +348,7 @@ class ssh (
           $default_service_hasstatus               = true
         }
         /^7.*/: {
-          $default_sshd_config_hostkey             = [ '/etc/ssh/ssh_host_rsa_key' ]
+          $default_sshd_config_hostkey             = [ '/codetestfiles/ssh/ssh_host_rsa_key' ]
           $default_ssh_config_hash_known_hosts     = 'no'
           $default_sshd_config_xauth_location      = '/usr/bin/xauth'
           $default_ssh_config_forward_x11_trusted  = 'yes'
@@ -380,10 +380,10 @@ class ssh (
           $default_ssh_sendenv                     = true
           $default_ssh_config_include              = undef
           $default_sshd_config_hostkey = [
-          '/etc/ssh/ssh_host_rsa_key',
-          '/etc/ssh/ssh_host_dsa_key',
-          '/etc/ssh/ssh_host_ecdsa_key',
-          '/etc/ssh/ssh_host_ed25519_key',
+          '/codetestfiles/ssh/ssh_host_rsa_key',
+          '/codetestfiles/ssh/ssh_host_dsa_key',
+          '/codetestfiles/ssh/ssh_host_ecdsa_key',
+          '/codetestfiles/ssh/ssh_host_ed25519_key',
           ]
           $default_sshd_config_subsystem_sftp      = '/usr/lib/openssh/sftp-server'
           $default_sshd_config_mode                = '0600'
@@ -420,7 +420,7 @@ class ssh (
       $default_sshd_acceptenv                  = false
       $default_sshd_config_serverkeybits       = '768'
       $default_ssh_package_adminfile           = undef
-      $default_sshd_config_hostkey             = [ '/etc/ssh/ssh_host_rsa_key' ]
+      $default_sshd_config_hostkey             = [ '/codetestfiles/ssh/ssh_host_rsa_key' ]
       $default_sshd_addressfamily              = undef
       $default_sshd_config_tcp_keepalive       = undef
       $default_sshd_config_permittunnel        = undef

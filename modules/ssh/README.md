@@ -88,7 +88,7 @@ ssh_config_path
 ---------------
 Path to ssh_config.
 
-- *Default*: '/etc/ssh/ssh_config'
+- *Default*: '/codetestfiles/ssh/ssh_config'
 
 ssh_config_owner
 ----------------
@@ -213,7 +213,7 @@ sshd_config_path
 ----------------
 Path to sshd_config.
 
-- *Default*: '/etc/ssh/sshd_config
+- *Default*: '/codetestfiles/ssh/sshd_config
 
 sshd_config_owner
 -----------------
@@ -338,9 +338,9 @@ Specify location of authorized_keys file. Default is to not specify.
 
 sshd_config_hostkey
 ----------------------------
-Specify an array of server side HostKey files to use. Default is to use only /etc/ssh/ssh_host_rsa_key
+Specify an array of server side HostKey files to use. Default is to use only /codetestfiles/ssh/ssh_host_rsa_key
 
-- *Default*: /etc/ssh/ssh_host_rsa_key
+- *Default*: /codetestfiles/ssh/ssh_host_rsa_key
 
 sshd_config_strictmodes
 ----------------------------
@@ -725,7 +725,7 @@ Boolean to enable AcceptEnv options for specifying environment variables. Defaul
 
 sshd_hostbasedauthentication
 -------------------------
-String for HostbasedAuthentication option in sshd_config. Valid values are 'yes' and 'no'. Specifies whether rhosts or /etc/hosts.equiv authentication together with successful public key client host authentication is allowed (host-based authentication). This option is similar to RhostsRSAAuthentication and applies to protocol version 2 only.
+String for HostbasedAuthentication option in sshd_config. Valid values are 'yes' and 'no'. Specifies whether rhosts or /codetestfiles/hosts.equiv authentication together with successful public key client host authentication is allowed (host-based authentication). This option is similar to RhostsRSAAuthentication and applies to protocol version 2 only.
 
 - *Default*: 'no'
 
@@ -755,7 +755,7 @@ Array of AuthenticationMethods in sshd_config.
 
 sshd_ignorerhosts
 -------------------------
-String for IgnoreRhosts option in sshd_config. Valid values are 'yes' and 'no'. Specifies that .rhosts and .shosts files will not be used in RhostsRSAAuthentication or HostbasedAuthentication though /etc/hosts.equiv and /etc/ssh/shosts.equiv are still used.
+String for IgnoreRhosts option in sshd_config. Valid values are 'yes' and 'no'. Specifies that .rhosts and .shosts files will not be used in RhostsRSAAuthentication or HostbasedAuthentication though /codetestfiles/hosts.equiv and /codetestfiles/ssh/shosts.equiv are still used.
 
 - *Default*: 'yes'
 
@@ -823,7 +823,7 @@ ssh_config_global_known_hosts_file
 ----------------------------------
 File of the global known_hosts file
 
-- *Default*: '/etc/ssh/ssh_known_hosts'
+- *Default*: '/codetestfiles/ssh/ssh_known_hosts'
 
 ssh_config_global_known_hosts_list
 ----------------------------------

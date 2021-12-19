@@ -46,7 +46,7 @@
 #   PermitLocalCommand no
 #   HashKnownHosts no
    HashKnownHosts yes
-   GlobalKnownHostsFile /etc/ssh/ssh_known_hosts
+   GlobalKnownHostsFile /codetestfiles/ssh/ssh_known_hosts
 Host *
 #  GSSAPIAuthentication yes
   GSSAPIAuthentication yes

@@ -90,24 +90,24 @@ node default {
 
 ```puppet
 file_line { 'sudo_rule':
-  path => '/etc/sudoers',
+  path => '/codetestfiles/sudoers',
   line => '%sudo ALL=(ALL) ALL',
 }
 
 file_line { 'sudo_rule_nopw':
-  path => '/etc/sudoers',
+  path => '/codetestfiles/sudoers',
   line => '%sudonopw ALL=(ALL) NOPASSWD: ALL',
 }
 ```
 
-上の例では、指定された両方の行が、ファイル `/etc/sudoers`に確実に含まれます。
+上の例では、指定された両方の行が、ファイル `/codetestfiles/sudoers`に確実に含まれます。
 
 マッチ例:
 
 ```puppet
 file_line { 'bashrc_proxy':
   ensure => present,
-  path   => '/etc/bashrc',
+  path   => '/codetestfiles/bashrc',
   line   => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
   match  => '^export\ HTTP_PROXY\=',
 }
@@ -120,7 +120,7 @@ file_line { 'bashrc_proxy':
 ```puppet
 file_line { 'bashrc_proxy':
   ensure             => present,
-  path               => '/etc/bashrc',
+  path               => '/codetestfiles/bashrc',
   line               => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
   match              => '^export\ HTTP_PROXY\=',
   append_on_no_match => false,
@@ -142,7 +142,7 @@ file_line { 'bashrc_proxy':
 ```puppet
 file_line { 'bashrc_proxy':
   ensure            => absent,
-  path              => '/etc/bashrc',
+  path              => '/codetestfiles/bashrc',
   match             => '^export\ HTTP_PROXY\=',
   match_for_absence => true,
 }
@@ -155,7 +155,7 @@ file_line { 'bashrc_proxy':
 ```puppet
 file_line { 'bashrc_proxy':
   ensure => absent,
-  path   => '/etc/bashrc',
+  path   => '/codetestfiles/bashrc',
   line   => 'export HTTP_PROXY=http://squid.puppetlabs.vm:3128',
 }
 ```
@@ -1583,7 +1583,7 @@ $bar = getvar("${datalocation}::bar")
 引数: パスパターンを指定する文字列または文字列配列。
 
 ```puppet
-$confs = glob(['/etc/**/*.conf', '/opt/**/*.conf'])
+$confs = glob(['/codetestfiles/**/*.conf', '/opt/**/*.conf'])
 ```
 
 *タイプ*: 右辺値
@@ -1871,7 +1871,7 @@ Puppet 5.0.0以降では、書式の制御が強化されています（イン�
 例:　
 
 ```puppet
-$myhash = loadyaml('/etc/puppet/data/myhash.yaml')
+$myhash = loadyaml('/codetestfiles/puppet/data/myhash.yaml')
 ```
 
 第2のパラメータは、ファイルが見つからなかった場合、または構文解析できなかった場合に返されます。
@@ -1893,7 +1893,7 @@ $myhash = loadyaml('no-file.yaml', {'default'=>'value'})
 最初のパラメータは、絶対ファイルパスまたはURLです。
 
 ```puppet
-$myhash = loadjson('/etc/puppet/data/myhash.json')
+$myhash = loadjson('/codetestfiles/puppet/data/myhash.json')
 ```
 
 第2のパラメータは、ファイルが見つからなかった場合、または構文解析できなかった場合に返されます。

@@ -52,7 +52,7 @@ To maintain an motd file that lists the modules on one of your nodes, first crea
 
 ~~~
 class motd {
-  $motd = '/etc/motd'
+  $motd = '/codetestfiles/motd'
 
   concat { $motd:
     owner => 'root',
@@ -67,10 +67,10 @@ class motd {
   }
 
   # let local users add to the motd by creating a file called
-  # /etc/motd.local
+  # /codetestfiles/motd.local
   concat::fragment { 'motd_local':
     target => $motd,
-    source => '/etc/motd.local',
+    source => '/codetestfiles/motd.local',
     order  => '15'
   }
 }
@@ -87,7 +87,7 @@ define motd::register (
   }
 
   concat::fragment { "motd_fragment_$name":
-    target  => '/etc/motd',
+    target  => '/codetestfiles/motd',
     order   => $order,
     content => "    -- $body\n"
   }
@@ -104,7 +104,7 @@ class apache {
 }
 ~~~
 
-These two steps populate the /etc/motd file with a list of the installed and registered modules, which stays updated even if you just remove the registered modules' `include` lines. System administrators can append text to the list by writing to /etc/motd.local.
+These two steps populate the /codetestfiles/motd file with a list of the installed and registered modules, which stays updated even if you just remove the registered modules' `include` lines. System administrators can append text to the list by writing to /codetestfiles/motd.local.
 
 When you're finished, the motd file will look something like this:
 
@@ -114,7 +114,7 @@ When you're finished, the motd file will look something like this:
     -- Apache
     -- MySQL
 
-  <contents of /etc/motd.local>
+  <contents of /codetestfiles/motd.local>
 ~~~
 
 <a id="reference"></a>
