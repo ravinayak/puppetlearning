@@ -1,5 +1,5 @@
 file {'/usr/local/bin/run-puppet':
-	source => '/codetestfiles/puppetlabs/code/environments/production/puppet-learning/files/puppet-run.sh',
+	source => '/codetestfiles/puppetlabs/code/environments/production/puppetlearning/files/puppet-run.sh',
 	mode => '0755',
 }
 

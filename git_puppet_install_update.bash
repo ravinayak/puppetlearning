@@ -29,7 +29,7 @@ cp /data_synced_with_host/.bashrc ~/.bashrc
 source ~/.bashrc
 # ssh -vT git@github.com: This throws an erro because git does not support shell access. Test it 1st thing when machine boots up
 cd /codetestfiles/puppetlabs/code/environments/production/
-cd puppet-learning
+cd puppetlearning
 sudo puppet apply manifests/run_puppet.pp
 mkdir -p /codetestfiles # This will be a standard directory in which we shall place all our puppet test files
 # Below is a description of why we used the above commands and how you would have done it manually
@@ -48,7 +48,7 @@ mkdir -p /codetestfiles # This will be a standard directory in which we shall pl
 # exit # login as vagrant user
 # sudo cp /data_synced_with_host/* /root/.ssh/
 # sudo ssh -vT git@github.com # this should return a successful message of your authentication
-# sudo git clone <git_clone_url=git@github.com:ravinayak/puppet-learning.git>
+# sudo git clone <git_clone_url=git@github.com:ravinayak/puppetlearning.git>
 # 
 rm /home/vagrant/puppet-release-focal.deb
 touch /var/vagrant_provision

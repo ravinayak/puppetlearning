@@ -1,7 +1,7 @@
 accounts::users:
   'neo2':
-    uid: 10080
-    gid: 10080
+    uid: 100805
+    gid: 100805
     shell: /usr/bin/bash
     system: false
     groups: 
@@ -15,8 +15,8 @@ accounts::users:
     password_max_age: 124
     password: "%(lookup('neo2password')"
   'neo3':
-    uid: 10081
-    gid: 10081
+    uid: 100811
+    gid: 100811
     shell: /usr/bin/bash
     system: false
     groups: 
