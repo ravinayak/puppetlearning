@@ -85,7 +85,7 @@ $x33=['a', 'b', 'c'] =~ Array[Pattern[/[a-z]/]] # Array which consists of patter
 $x34=['a', 'b', '%#'] =~ Array[Pattern[/[a-z]/]]
 $x35='aaaabbbb' =~/\Aab*\Z/
 notice("The values interpolated are :: ${x30} -- ${x31} -- ${size} -- ${x32} -- ${x33} -- ${x34} -- ${x35}")
-class typesystem(
+class puppetlearning::typesystem(
   String $x36,
   Enum['a', 'z', 'c', 'd', 'e', 'f', 'g'] $x37,
   Pattern[/a*b*/,/ab/,/[[:digit:]]+/,/[[:alnum]]+/] $x41,
@@ -105,9 +105,10 @@ class typesystem(
   $x45 = 'ab123cd' =~ Pattern[/a*b*/,/ab/,/[[:digit:]]+/,/[[:alnum]]+/]
   notice("Class Params :: The values interpolated are :: ${x38} -- ${x39} -- ${x40} -- ${x40} -- ${x41} -- ${x42} -- ${x43} -- ${x44} -- ${x45}")
   notice("Class Params :: ${y51} -- ${y52} -- ${y53}")
+  notice('End of class----------------------------------------------')
 }
 
-Class{ 'typesystem':
+Class{ 'puppetlearning::typesystem':
   x36 => 'anvv',
   x37 => 'a',
   x41 => 'abbcc',

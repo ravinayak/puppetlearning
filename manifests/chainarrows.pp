@@ -1,4 +1,4 @@
-class chainarrows{
+class puppetlearning::chainarrows{
   user{'jimba':
     ensure => absent,
   }
