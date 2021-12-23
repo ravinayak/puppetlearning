@@ -1,4 +1,4 @@
-  class puppetlearning::builtinfunctionref {
+  class puppetlearning::builtinfunctionref_a_c {
     #contain 'puppetlearning::containclassesdir::containclass1undeclared'
     # contain 'puppetlearning::containclassesdir::containclass2declared'
     
@@ -126,6 +126,7 @@
     $bc = new(Hash, [1,2])
     notice($ab)
     notice($bc)
+    crit('This is a critical failure')
   }
 
 function functiontocreateresources(){
@@ -165,7 +166,7 @@ function functiontocreateresources(){
 # functionwithbreak()
 # call('functionwithcall', 'Ron',  10, [12, 13, 14])
 # functionwithstringman()
-# functionwithc()
+functionwithc()
 # functiontocreateresources()
 
-Class { 'puppetlearning::builtinfunctionref': }
+Class { 'puppetlearning::builtinfunctionref_a_c': }
