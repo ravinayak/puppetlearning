@@ -8,6 +8,8 @@
 
     # Testin contain in gppuppet module
   }
+  # Using as a resource declaration
+  Class { 'gppuppet::containtest': }
 
   function functionwitha(){
     $x=7.5
