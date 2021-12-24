@@ -1,4 +1,4 @@
-  class puppetlearning::builtinfunctionref_a_c {
+  class puppetlearning::builtinfunctionref_letter_a_through_letter_c {
     #contain 'puppetlearning::containclassesdir::containclass1undeclared'
     # contain 'puppetlearning::containclassesdir::containclass2declared'
     
@@ -169,4 +169,4 @@ function functiontocreateresources(){
 functionwithc()
 # functiontocreateresources()
 
-Class { 'puppetlearning::builtinfunctionref_a_c': }
+Class { 'puppetlearning::builtinfunctionref_letter_a_through_letter_c': }
