@@ -1171,7 +1171,7 @@
 #     docroot          => '/home/appuser/myphpapp',
 #     suphp_addhandler => 'x-httpd-php',
 #     suphp_engine     => 'on',
-#     suphp_configpath => '/codetestfiles/php5/apache2',
+#     suphp_configpath => '/etc/php5/apache2',
 #     directories      => { path => '/home/appuser/myphpapp',
 #       'suphp'        => { user => 'myappuser', group => 'myappgroup' },
 #     }
@@ -1188,7 +1188,7 @@
 #     docroot          => '/home/appuser/myphpapp',
 #     suphp_addhandler => 'x-httpd-php',
 #     suphp_engine     => 'on',
-#     suphp_configpath => '/codetestfiles/php5/apache2',
+#     suphp_configpath => '/etc/php5/apache2',
 #     directories      => { path => '/home/appuser/myphpapp',
 #       'suphp'        => { user => 'myappuser', group => 'myappgroup' },
 #     }
@@ -1205,7 +1205,7 @@
 #     docroot          => '/home/appuser/myphpapp',
 #     suphp_addhandler => 'x-httpd-php',
 #     suphp_engine     => 'on',
-#     suphp_configpath => '/codetestfiles/php5/apache2',
+#     suphp_configpath => '/etc/php5/apache2',
 #     directories      => { path => '/home/appuser/myphpapp',
 #       'suphp'        => { user => 'myappuser', group => 'myappgroup' },
 #     }
@@ -1626,7 +1626,7 @@
 #   ``` puppet
 #   apache::vhost { 'sample.example.net':
 #     ...
-#     ssl_proxy_machine_cert => '/codetestfiles/httpd/ssl/client_certificate.pem',
+#     ssl_proxy_machine_cert => '/etc/httpd/ssl/client_certificate.pem',
 #   }
 #   ```
 # @param ssl_proxy_machine_cert_chain

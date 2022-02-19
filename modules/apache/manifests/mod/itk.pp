@@ -101,9 +101,9 @@ class apache::mod::itk (
         }
       }
       else {
-        file_line { '/codetestfiles/sysconfig/httpd itk enable':
+        file_line { '/etc/sysconfig/httpd itk enable':
           ensure  => present,
-          path    => '/codetestfiles/sysconfig/httpd',
+          path    => '/etc/sysconfig/httpd',
           line    => 'HTTPD=/usr/sbin/httpd.itk',
           match   => '#?HTTPD=/usr/sbin/httpd.itk',
           require => Package['httpd'],

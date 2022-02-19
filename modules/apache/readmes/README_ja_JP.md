@@ -318,7 +318,7 @@
 - Apacheモジュール
 - バーチャルホスト
 - リッスンするポート
-- FreeBSDおよびGentooの`/codetestfiles/make.conf` 
+- FreeBSDおよびGentooの`/etc/make.conf` 
 
 Gentooでは、このモジュールは [`gentoo/puppet-portage`][] Puppetモジュールに依存します。Gentooについては、いくつかのオプションが適用され、一部の機能や設定が有効になりますが、このモジュールに[対応するオペレーティングシステム][]ではない点に留意してください。
 
@@ -407,8 +407,8 @@ apache::vhost { 'cert.example.com':
   port     => '443',
   docroot  => '/var/www/cert',
   ssl      => true,
-  ssl_cert => '/codetestfiles/ssl/fourth.example.com.cert',
-  ssl_key  => '/codetestfiles/ssl/fourth.example.com.key',
+  ssl_cert => '/etc/ssl/fourth.example.com.cert',
+  ssl_key  => '/etc/ssl/fourth.example.com.key',
 }
 ```
 
@@ -539,7 +539,7 @@ apache::vhost { 'suphp.example.com':
   docroot          => '/home/appuser/myphpapp',
   suphp_addhandler => 'x-httpd-php',
   suphp_engine     => 'on',
-  suphp_configpath => '/codetestfiles/php5/apache2',
+  suphp_configpath => '/etc/php5/apache2',
   directories      => [
     { 'path'  => '/home/appuser/myphpapp',
       'suphp' => {
@@ -874,10 +874,10 @@ Apacheサーバのメイン設定ファイルを置くディレクトリを設�
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/apache2`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22`
-- **Gentoo**: `/codetestfiles/apache2`
-- **Red Hat**: `/codetestfiles/httpd/conf`
+- **Debian**: `/etc/apache2`
+- **FreeBSD**: `/usr/local/etc/apache22`
+- **Gentoo**: `/etc/apache2`
+- **Red Hat**: `/etc/httpd/conf`
 
 ##### `conf_template`
 
@@ -891,10 +891,10 @@ Apacheサーバのカスタム設定ディレクトリの場所を設定しま�
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/apache2/conf.d`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22`
-- **Gentoo**: `/codetestfiles/apache2/conf.d`
-- **Red Hat**: `/codetestfiles/httpd/conf.d`
+- **Debian**: `/etc/apache2/conf.d`
+- **FreeBSD**: `/usr/local/etc/apache22`
+- **Gentoo**: `/etc/apache2/conf.d`
+- **Red Hat**: `/etc/httpd/conf.d`
 
 ##### `default_charset`
 
@@ -942,10 +942,10 @@ Apacheサーバのデフォルトの証明書認証局を設定します。
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/ssl/certs/ssl-cert-snakeoil.pem`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22/server.crt`
-- **Gentoo**: `/codetestfiles/ssl/apache2/server.crt`
-- **Red Hat**: `/codetestfiles/pki/tls/certs/localhost.crt`
+- **Debian**: `/etc/ssl/certs/ssl-cert-snakeoil.pem`
+- **FreeBSD**: `/usr/local/etc/apache22/server.crt`
+- **Gentoo**: `/etc/ssl/apache2/server.crt`
+- **Red Hat**: `/etc/pki/tls/certs/localhost.crt`
 
 ##### `default_ssl_chain`
 
@@ -987,10 +987,10 @@ Apacheサーバのデフォルトの証明書認証局を設定します。
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/ssl/private/ssl-cert-snakeoil.key`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22/server.key`
-- **Gentoo**: `/codetestfiles/ssl/apache2/server.key`
-- **Red Hat**: `/codetestfiles/pki/tls/private/localhost.key`
+- **Debian**: `/etc/ssl/private/ssl-cert-snakeoil.key`
+- **FreeBSD**: `/usr/local/etc/apache22/server.key`
+- **Gentoo**: `/etc/ssl/apache2/server.key`
+- **Red Hat**: `/etc/pki/tls/private/localhost.key`
 
 
 ##### `default_ssl_vhost`
@@ -1092,10 +1092,10 @@ Apacheサーバの基本設定ディレクトリを設定します。これは�
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/apache2`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22`
-- **Gentoo**: `/codetestfiles/apache2`
-- **Red Hat**: `/codetestfiles/httpd`
+- **Debian**: `/etc/apache2`
+- **FreeBSD**: `/usr/local/etc/apache22`
+- **Gentoo**: `/etc/apache2`
+- **Red Hat**: `/etc/httpd`
 
 ##### `http_protocol_options`
 
@@ -1216,10 +1216,10 @@ Puppetが[Apacheモジュール][]の設定ファイルを置く場所を設定�
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/apache2/mods-available`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22/Modules`
-- **Gentoo**: `/codetestfiles/apache2/modules.d`
-- **Red Hat**: `/codetestfiles/httpd/conf.d`
+- **Debian**: `/etc/apache2/mods-available`
+- **FreeBSD**: `/usr/local/etc/apache22/Modules`
+- **Gentoo**: `/etc/apache2/modules.d`
+- **Red Hat**: `/etc/httpd/conf.d`
 
 ##### `mod_libs`
 
@@ -1342,10 +1342,10 @@ Apacheの[`ServerRoot`][]ディレクティブでApacheサーバのルートを�
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/apache2`
+- **Debian**: `/etc/apache2`
 - **FreeBSD**: `/usr/local`
 - **Gentoo**: `/var/www`
-- **Red Hat**: `/codetestfiles/httpd`
+- **Red Hat**: `/etc/httpd`
 
 ##### `server_signature`
 
@@ -1484,10 +1484,10 @@ httpd.confの/ディレクトリについて、デフォルトのアクセスポ
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-- **Debian**: `/codetestfiles/apache2/sites-available`
-- **FreeBSD**: `/usr/local/codetestfiles/apache22/Vhosts`
-- **Gentoo**: `/codetestfiles/apache2/vhosts.d`
-- **Red Hat**: `/codetestfiles/httpd/conf.d`
+- **Debian**: `/etc/apache2/sites-available`
+- **FreeBSD**: `/usr/local/etc/apache22/Vhosts`
+- **Gentoo**: `/etc/apache2/vhosts.d`
+- **Red Hat**: `/etc/httpd/conf.d`
 
 ##### `vhost_include_pattern`
 
@@ -2531,7 +2531,7 @@ $shm_path = '"|rotatelogs /var/log/httpd/mod_jk.log.%Y%m%d 86400 -180"'
 
 ``` puppet
 class { 'apache::mod::ldap':
-  ldap_trusted_global_cert_file => '/codetestfiles/pki/tls/certs/ldap-trust.crt',
+  ldap_trusted_global_cert_file => '/etc/pki/tls/certs/ldap-trust.crt',
   ldap_trusted_global_cert_type => 'CA_DER',
   ldap_trusted_mode             => 'TLS',
   ldap_shared_cache_size        => '500000',
@@ -2766,7 +2766,7 @@ Apacheモジュール`mod_rewrite`をインストールして有効にします�
 
 ##### クラス: `apache::mod::ssl`
 
-[Apache SSL機能][`mod_ssl`]をインストールし、`ssl.conf.erb`テンプレートを使用して設定を生成します。ほとんどのオペレーティングシステムでは、この`ssl.conf`はモジュール設定ディレクトリに置かれています。Red Hatベースのオペレーティングシステムでは、このファイルは`/codetestfiles/httpd/conf.d`にあります。これは、RPMが設定を保存するのと同じロケーションです。
+[Apache SSL機能][`mod_ssl`]をインストールし、`ssl.conf.erb`テンプレートを使用して設定を生成します。ほとんどのオペレーティングシステムでは、この`ssl.conf`はモジュール設定ディレクトリに置かれています。Red Hatベースのオペレーティングシステムでは、このファイルは`/etc/httpd/conf.d`にあります。これは、RPMが設定を保存するのと同じロケーションです。
 
 バーチャルホストでSSLを使用するには、`::apache`の[`default_ssl_vhost`][]パラメータを`true`に設定する**か**、[`apache::vhost`][]の[`ssl`][]パラメータを`true`に設定する必要があります。
 
@@ -4532,7 +4532,7 @@ HTTPDにより使用し、条件を用いてバーチャルホストの環境変
 [suPHP](http://suphp.org/DocumentationView.html?file=apache/CONFIG)によりバーチャルホストを設定します。
 
 * `suphp_addhandler`。デフォルト値: RedHatおよびFreeBSDでは'php5-script'、DebianおよびGentooでは'x-httpd-php'。
-* `suphp_configpath`。デフォルト値: RedHatおよびFreeBSDでは`undef`、DebianおよびGentooでは'/codetestfiles/php5/apache2'。
+* `suphp_configpath`。デフォルト値: RedHatおよびFreeBSDでは`undef`、DebianおよびGentooでは'/etc/php5/apache2'。
 * `suphp_engine`。値: 'on'または'off'。デフォルト値: 'off'。
 
 suPHPによるバーチャルホスト設定の例:
@@ -4543,7 +4543,7 @@ apache::vhost { 'suphp.example.com':
   docroot          => '/home/appuser/myphpapp',
   suphp_addhandler => 'x-httpd-php',
   suphp_engine     => 'on',
-  suphp_configpath => '/codetestfiles/php5/apache2',
+  suphp_configpath => '/etc/php5/apache2',
   directories      => { path => '/home/appuser/myphpapp',
     'suphp'        => { user => 'myappuser', group => 'myappgroup' },
   }
@@ -4991,7 +4991,7 @@ apache::vhost { 'sample.example.net':
     { path                       => '/',
       provider                   => 'directory',
       mellon_enable              => 'info',
-      mellon_sp_private_key_file => '/codetestfiles/certs/${::fqdn}.key',
+      mellon_sp_private_key_file => '/etc/certs/${::fqdn}.key',
       mellon_endpoint_path       => '/mellon',
       mellon_set_env_no_prefix   => { 'ADFS_GROUP' => 'http://schemas.xmlsoap.org/claims/Group',
                                       'ADFS_EMAIL' => 'http://schemas.xmlsoap.org/claims/EmailAddress', },
@@ -5297,10 +5297,10 @@ SSL証明書を指定します。
 
 デフォルト値: オペレーティングシステムによって異なります。
 
-* RedHat: '/codetestfiles/pki/tls/certs/localhost.crt'
-* Debian: '/codetestfiles/ssl/certs/ssl-cert-snakeoil.pem'
-* FreeBSD: '/usr/local/codetestfiles/apache22/server.crt'
-* Gentoo: '/codetestfiles/ssl/apache2/server.crt'
+* RedHat: '/etc/pki/tls/certs/localhost.crt'
+* Debian: '/etc/ssl/certs/ssl-cert-snakeoil.pem'
+* FreeBSD: '/usr/local/etc/apache22/server.crt'
+* Gentoo: '/etc/ssl/apache2/server.crt'
 
 ##### `ssl_protocol`
 
@@ -5358,10 +5358,10 @@ SSLキーを指定します。
 
 デフォルト値はオペレーティングシステムによって異なります。このデフォルト値は設定しなくても機能しますが、本稼働環境で使用する前に、固有の証明書情報により基本の`apache`クラス内で更新する必要があります。
 
-* RedHat: '/codetestfiles/pki/tls/private/localhost.key'
-* Debian: '/codetestfiles/ssl/private/ssl-cert-snakeoil.key'
-* FreeBSD: '/usr/local/codetestfiles/apache22/server.key'
-* Gentoo: '/codetestfiles/ssl/apache2/server.key'
+* RedHat: '/etc/pki/tls/private/localhost.key'
+* Debian: '/etc/ssl/private/ssl-cert-snakeoil.key'
+* FreeBSD: '/usr/local/etc/apache22/server.key'
+* Gentoo: '/etc/ssl/apache2/server.key'
 
 ##### `ssl_verify_client`
 
@@ -5432,7 +5432,7 @@ apache::vhost { 'sample.example.net':
 ``` puppet
 apache::vhost { 'sample.example.net':
   …
-  ssl_proxy_machine_cert => '/codetestfiles/httpd/ssl/client_certificate.pem',
+  ssl_proxy_machine_cert => '/etc/httpd/ssl/client_certificate.pem',
 }
 ```
 

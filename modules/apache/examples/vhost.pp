@@ -41,8 +41,8 @@ apache::vhost { 'fourth.example.com':
   port     => '443',
   docroot  => '/var/www/fourth',
   ssl      => true,
-  ssl_cert => '/codetestfiles/ssl/fourth.example.com.cert',
-  ssl_key  => '/codetestfiles/ssl/fourth.example.com.key',
+  ssl_cert => '/etc/ssl/fourth.example.com.cert',
+  ssl_key  => '/etc/ssl/fourth.example.com.key',
 }
 
 # Vhost with english title and servername parameter
@@ -235,9 +235,9 @@ apache::vhost { 'securedomain.com':
   port       => '443',
   docroot    => '/var/www/secure',
   ssl        => true,
-  ssl_cert   => '/codetestfiles/ssl/securedomain.cert',
-  ssl_key    => '/codetestfiles/ssl/securedomain.key',
-  ssl_chain  => '/codetestfiles/ssl/securedomain.crt',
+  ssl_cert   => '/etc/ssl/securedomain.cert',
+  ssl_key    => '/etc/ssl/securedomain.key',
+  ssl_chain  => '/etc/ssl/securedomain.crt',
   add_listen => false,
 }
 

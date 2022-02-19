@@ -72,7 +72,7 @@
 #   Name of ssl package to install.
 #
 # On most operating systems, the ssl.conf is placed in the module configuration directory. On Red Hat based operating systems, this
-# file is placed in /codetestfiles/httpd/conf.d, the same location in which the RPM stores the configuration.
+# file is placed in /etc/httpd/conf.d, the same location in which the RPM stores the configuration.
 #
 # To use SSL with a virtual host, you must either set the default_ssl_vhost parameter in ::apache to true or the ssl parameter in 
 # apache::vhost to true.

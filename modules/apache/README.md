@@ -310,7 +310,7 @@
 - Apache modules
 - Virtual hosts
 - Listened-to ports
-- `/codetestfiles/make.conf` on FreeBSD and Gentoo
+- `/etc/make.conf` on FreeBSD and Gentoo
 
 On Gentoo, this module depends on the [`gentoo/puppet-portage`][] Puppet module. Note that while several options apply or enable certain features and settings for Gentoo, it is not a [supported operating system][] for this module.
 
@@ -399,8 +399,8 @@ apache::vhost { 'cert.example.com':
   port     => '443',
   docroot  => '/var/www/cert',
   ssl      => true,
-  ssl_cert => '/codetestfiles/ssl/fourth.example.com.cert',
-  ssl_key  => '/codetestfiles/ssl/fourth.example.com.key',
+  ssl_cert => '/etc/ssl/fourth.example.com.cert',
+  ssl_key  => '/etc/ssl/fourth.example.com.key',
 }
 ```
 
@@ -531,7 +531,7 @@ apache::vhost { 'suphp.example.com':
   docroot          => '/home/appuser/myphpapp',
   suphp_addhandler => 'x-httpd-php',
   suphp_engine     => 'on',
-  suphp_configpath => '/codetestfiles/php5/apache2',
+  suphp_configpath => '/etc/php5/apache2',
   directories      => [
     { 'path'  => '/home/appuser/myphpapp',
       'suphp' => {

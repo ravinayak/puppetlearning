@@ -285,7 +285,7 @@ This release adds SLES12 Support and many more features and bugfixes.
 - Updates `apache::balancer` to respect `apache::confd_dir`
 - Wrap mod_security directives in an IfModule
 - Fixes to various mods for Ubuntu Xenial
-- Fix /codetestfiles/modsecurity perms to match package
+- Fix /etc/modsecurity perms to match package
 - Fix PassengerRoot under Debian stretch
 - (MODULES-3476) Updates regex in apache_version custom fact to work with EL5
 - Dont sql_injection_attacks.data
@@ -972,7 +972,7 @@ Class['apache::service']`
 - Change dependency to puppetlabs-concat
 - Fix ruby 1.9 bug for `a2mod`
 - Change servername to be `$::hostname` if there is no `$::fqdn`
-- Make `/codetestfiles/ssl/certs` the default ssl certs directory for RedHat non-5.
+- Make `/etc/ssl/certs` the default ssl certs directory for RedHat non-5.
 - Make `php` the default php package for RedHat non-5.
 - Made `aliases` able to take a single alias hash instead of requiring an
 array.

@@ -101,9 +101,9 @@ class apache::mod::worker (
         }
       }
       else {
-        file_line { '/codetestfiles/sysconfig/httpd worker enable':
+        file_line { '/etc/sysconfig/httpd worker enable':
           ensure  => present,
-          path    => '/codetestfiles/sysconfig/httpd',
+          path    => '/etc/sysconfig/httpd',
           line    => 'HTTPD=/usr/sbin/httpd.worker',
           match   => '#?HTTPD=/usr/sbin/httpd.worker',
           require => Package['httpd'],

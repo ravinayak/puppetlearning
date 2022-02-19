@@ -12,7 +12,7 @@ Puppet::Type.type(:a2mod).provide(:redhat, parent: Puppet::Provider::A2mod) do
 
   require 'pathname'
 
-  # modpath: Path to default apache modules directory /codetestfiles/httpd/mod.d
+  # modpath: Path to default apache modules directory /etc/httpd/mod.d
   # modfile: Path to module load configuration file; Default: resides under modpath directory
   # libfile: Path to actual apache module library. Added in modfile LoadModule
 
@@ -20,7 +20,7 @@ Puppet::Type.type(:a2mod).provide(:redhat, parent: Puppet::Provider::A2mod) do
   class << self
     attr_accessor :modpath
     def preinit
-      @modpath = '/codetestfiles/httpd/mod.d'
+      @modpath = '/etc/httpd/mod.d'
     end
   end
 

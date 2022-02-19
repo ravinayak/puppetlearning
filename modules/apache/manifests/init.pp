@@ -436,7 +436,7 @@
 #   > **Note**: This parameter is deprecated in favor of the `purge_config` parameter.<br />
 # 
 # @param conf_enabled
-#   Whether the additional config files in `/codetestfiles/apache2/conf-enabled` should be managed.
+#   Whether the additional config files in `/etc/apache2/conf-enabled` should be managed.
 # 
 # @param vhost_enable_dir
 #   Set's whether the vhost definitions will be stored in sites-availible and if
@@ -556,8 +556,8 @@ class apache (
   }
 
   if $::osfamily == 'RedHat' and $facts['operatingsystemmajrelease'] == '7' {
-    # On redhat 7 the ssl.conf lives in /codetestfiles/httpd/conf.d (the confd_dir)
-    # when all other module configs live in /codetestfiles/httpd/conf.modules.d (the
+    # On redhat 7 the ssl.conf lives in /etc/httpd/conf.d (the confd_dir)
+    # when all other module configs live in /etc/httpd/conf.modules.d (the
     # mod_dir). On all other platforms and versions, ssl.conf lives in the
     # mod_dir. This should maintain the expected location of ssl.conf
     $_ssl_file = $ssl_file ? {
@@ -756,8 +756,8 @@ class apache (
       }
 
       file { [
-          '/codetestfiles/apache2/modules.d/.keep_www-servers_apache-2',
-          '/codetestfiles/apache2/vhosts.d/.keep_www-servers_apache-2',
+          '/etc/apache2/modules.d/.keep_www-servers_apache-2',
+          '/etc/apache2/vhosts.d/.keep_www-servers_apache-2',
         ]:
           ensure  => absent,
           require => Package['httpd'],
