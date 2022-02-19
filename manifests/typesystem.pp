@@ -172,14 +172,14 @@ $x79 = URI('http://example.com/a/b#l22') =~ $x76
 $x80 = URI[host => NotUndef, path => NotUndef]
 $x81 = URI('http://example.com/a/b') =~ $x80
 $x82 = URI('http://example.com') =~ $x80
-$x83 = URI('file:///codetestfiles/passwd') =~ $x80
+$x83 = URI('file:///etc/passwd') =~ $x80
 
 $x84 = URI[path => /^\//]
 $x85 = URI('/a/b') =~ $x84
 $x86 = URI('a/b') =~ $x84
 
 $x87 = URI('http://example.com') # path in this case is NOT Undef but seems to be an empty string
-$x88 = URI('file:///codetestfiles/passwd') # host in this case is NOT Undef but seems to be an empty string
+$x88 = URI('file:///etc/passwd') # host in this case is NOT Undef but seems to be an empty string
 $x89 = $x87.path =~ String
 $x90 = $x88.host =~ String
 

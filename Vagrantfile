@@ -18,9 +18,9 @@ Vagrant.configure("2") do |config|
 	puppet.vm.provision "shell", path: "~/softlinks/practicepuppetcode/puppetlearning/git_puppet_install_update.bash"
 	puppet.vm.synced_folder ".", "/vagrant", disabled: true
 	puppet.vm.synced_folder "/media/neo/ProjectData/VagrantBoxes/host_synced_folders", "/data_synced_with_host"
-	puppet.vm.synced_folder "/media/neo/ProjectData/VagrantBoxes/puppet-beginners-guide-3/puppet", "/codetestfiles/puppetlabs/code/environments/pbg"
+	puppet.vm.synced_folder "/media/neo/ProjectData/VagrantBoxes/puppet-beginners-guide-3/puppet", "/etc/puppetlabs/code/environments/pbg"
 	puppet.vm.synced_folder "/media/neo/ProjectData/VagrantBoxes/puppet-beginners-guide-3/examples", "/examples"
-	puppet.vm.synced_folder "/media/neo/ProjectData/CodePractice/PuppetCodePractice/puppetlearning","/codetestfiles/puppetlabs/code/environments/production/puppetlearning"
+	puppet.vm.synced_folder "/media/neo/ProjectData/CodePractice/PuppetCodePractice/puppetlearning","/etc/puppetlabs/code/environments/production/puppetlearning"
 	puppet.vm.provider "virtualbox" do |vb|
 		vb.memory="3072"
 		vb.name="puppet-virtualbox-latest"

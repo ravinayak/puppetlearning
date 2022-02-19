@@ -112,7 +112,7 @@ $params2 = {
   exec { 'apt-get install command':
     command   => 'sudo apt-get install gnupg rng-tools -y',
     path      => ['/usr/bin', '/usr/local/bin'],
-    creates   => '/codetestfiles/systemd/system/dev-hwrng.device.wants/rng-tools.service',
+    creates   => '/etc/systemd/system/dev-hwrng.device.wants/rng-tools.service',
     logoutput => true,
   }
   accounts::user { 'neo122':

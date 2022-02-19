@@ -1,6 +1,6 @@
 version: 5
 defaults:
-  datadir: "/codetestfiles/puppetlabs/code/environments/production/puppetlearning/data"
+  datadir: "/etc/puppetlabs/code/environments/production/puppetlearning/data"
   data_hash: yaml_data
 hierarchy:
   - name: 'Per Node Data'

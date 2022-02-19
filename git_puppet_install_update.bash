@@ -4,12 +4,12 @@ apt-get dist-upgrade -y
 add-apt-repository ppa:git-core/ppa
 apt-get update -y
 apt-get install git -y
-source /codetestfiles/lsb-release
+source /etc/lsb-release
 wget https://apt.puppetlabs.com/puppet-release-${DISTRIB_CODENAME}.deb
 dpkg -i puppet-release-${DISTRIB_CODENAME}.deb
 apt-get update -y
 apt-get install git puppet-agent -y
-echo 'Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/opt/puppetlabs/bin:/opt/puppetlabs/puppet/bin"' >/codetestfiles/sudoers.d/puppet
+echo 'Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/opt/puppetlabs/bin:/opt/puppetlabs/puppet/bin"' >/etc/sudoers.d/puppet
 apt-get install build-essential -y
 /opt/puppetlabs/puppet/bin/gem install gpgme --no-document
 /opt/puppetlabs/puppet/bin/gem install hiera-eyaml-gpg --no-document
@@ -28,7 +28,7 @@ cp /data_synced_with_host/gitconfig_root /root/.gitconfig
 cp /data_synced_with_host/.bashrc ~/.bashrc
 source ~/.bashrc
 # ssh -vT git@github.com: This throws an erro because git does not support shell access. Test it 1st thing when machine boots up
-cd /codetestfiles/puppetlabs/code/environments/production/
+cd /etc/puppetlabs/code/environments/production/
 cd puppetlearning
 sudo puppet apply manifests/run_puppet.pp
 mkdir -p /codetestfiles # This will be a standard directory in which we shall place all our puppet test files

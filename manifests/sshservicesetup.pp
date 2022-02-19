@@ -6,10 +6,10 @@ class sshservicesetup {
 
   package { $ssh_packages:
     ensure => present,
-    before => File['/codetestfiles/ssh/sshd_config'],
+    before => File['/etc/ssh/sshd_config'],
   }
 
-  file {'/codetestfiles/ssh/sshd_config':
+  file {'/etc/ssh/sshd_config':
     ensure  => present,
     owner   => 'root',
     group   => 'root',
