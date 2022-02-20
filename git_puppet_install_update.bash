@@ -14,6 +14,8 @@ apt-get install build-essential -y
 /opt/puppetlabs/puppet/bin/gem install gpgme --no-document
 /opt/puppetlabs/puppet/bin/gem install hiera-eyaml-gpg --no-document
 /opt/puppetlabs/puppet/bin/gem install r10k --no-document
+/opt/puppetlabs/puppet/bin/gem install yard
+/opt/puppetlabs/puppet/bin/gem install puppet-strings
 apt-get install libncurses5-dev libncursesw5-dev -y
 apt-get autoremove -y
 apt-get clean
